@@ -1,0 +1,11 @@
+<svg id="arrow-left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45.196" height="58.128" viewBox="0 0 45.196 58.128">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-162.38" y1="0.5" x2="-161.38" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#05aac8"/>
+      <stop offset="1"/>
+    </linearGradient>
+  </defs>
+  <path id="Path_2050" data-name="Path 2050" d="M522.986,441.335l12.456-21.577-4.744-.065L518.2,441.335l13.542,23.451h4.778Z" transform="translate(-497.124 -413.177)" fill="#a4e4ed"/>
+  <path id="Path_2051" data-name="Path 2051" d="M530.111,418.264l.037-.066h27.321l-.151.262H530.3l-16.629,28.8,16.629,28.8h28.114l.151.262H530.148l-16.742-29-.038-.065Z" transform="translate(-513.368 -418.198)" fill="#05aac8"/>
+  <path id="Path_2052" data-name="Path 2052" d="M557.067,418.258l-3,27.959,4.1,29.647H530.05s-16.467-28.557-16.628-28.8,16.628-28.805,16.628-28.805Z" transform="translate(-513.195 -417.999)" opacity="0.2" fill="url(#linear-gradient)" style="mix-blend-mode: screen;isolation: isolate"/>
+</svg>

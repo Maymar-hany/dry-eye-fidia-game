@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Eye Care</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+      </head>
+      <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+  <body>
+    <div id="header" >
+    <img id="head" src="images/Eye-lab-logo.png">
+    <div id="time">
+      
+      <p id="time-txt" class="has-text-centered ">SCORE</p>
+      <img src="images/left-score.svg" class="img-height">
+      <label id="score-label"> <text id="score">0</text>/9</label>
+      <img src="images/right-score.svg"  class="img-height">
+  </div>
+  </div>
+ 
+  <div  class="tile is-ancestor is-flex reverse-columns">
+    
+    <div id="patient-tile" class="tile is-4 is-vertical is-parent ">
+      
+        <div id="patients" class="columns is-mobile is-multiline">
+          <p id="patient-txt">INDECATIONS</p>
+        </div>
+      
+    </div>
+ 
+    <div id="container" class="tile">
+    <div  class="tile is-parent is-vertical is-8">
+      <div class="tile is-child dropzone has-text-centered">
+        
+        <div id="labzone">
+         <!--  <div id="squares" class="columns">
+          <div class="square1 column is-4">
+            <p>Drop here</p>
+          </div>
+          <span class="plus1">&#43;</span>
+          <div class="square1 column is-4">
+            <p>Drop here</p>
+          </div>
+          <span class="plus1">&#43;</span>
+          <div class="square1 column is-4">
+            <p>Drop here</p>
+          </div>
+        </div> -->
+            
+              <div id="guide">
+                <img src="images/tap.svg">
+                <p class="guide-txt">Use your mouse to drag and drop 2-3 
+                  components to get your product</p>
+              </div> 
+            
+              <button id="resetbtn" onclick="reset()"></button>
+              <div id="hint">
+                <img src="images/hint.svg">
+                <p class="centered">Use your mouse to drag the 
+                  product to match with the 
+                  correct indecation</p>
+              </div>
+                      <div id="medicine" class=" has-text-centered">
+                    
+                      </div>
+                
+                </div> 
+            
+          </div>
+      
+      <div id="product-tile" class="tile is-child columns ">
+           <div id="products-div" class="column is-11">
+            
+            <h2 id="product-txt">Correct Products </h2> 
+            <div class="swiper-container mySwiper">
+              <div id="products" class="columns is-mobile swiper-wrapper">
+               
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div >
+
+            </div>
+           </div>
+        
+        </div>
+    </div>
+    <!-- <div id="logo"></div>
+     -->
+    <div id="compounds-tile" class="tile is-5 is-vertical is-parent has-text-centered">
+     
+         
+      
+        <div id="compounds" class="columns is-mobile is-multiline ">
+          <p id="comp-txt">COMPONENTS</p>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+  <div id="winner" class="modal">
+    <div class="modal-background is-mobile">
+      
+    </div>
+    <div id="wins" class="modal-content has-text-centered">
+     
+        
+          <button class="modal-close is-large" aria-label="close" onclick="closefinalscore()"></button>
+           <p id="result-txt"  class=" title">   Winner !</p>
+           <p id="result-txt">Score: <label id="sc"></label> </p>
+           
+           <button  class="play-again" onClick="window.location.href=window.location.href">Play Again</button>
+        
+    </div>
+  </div>
+  <div id="amount-div" class="modal">
+    <div class="modal-background is-mobile">
+      
+    </div>
+    <div id="amount" class="modal-content has-text-centered">
+         <div id="closeAmount">
+
+         </div>
+          
+           <p id="result-txt"  class=" title"> Choose the component concentration </p>
+           <button id="0.05%" class="amount-btn" onclick="concentrate(this.id)">0.05%</button>
+           <button id="0.15%" class="amount-btn" onclick="concentrate(this.id)">0.15%</button>
+           <button id="0.3%" class="amount-btn" onclick="concentrate(this.id)">0.3%</button>
+           
+             
+    </div>
+  </div>  
+  <div id="relieved-div" class="modal">
+    <div class="modal-background is-mobile">
+      
+    </div>
+    <div id="relieved" class="modal-content has-text-centered">
+      <div id="closeDiv" onclick="closeresult()">
+
+      </div>
+        
+          <p id="result-txt"> Result </p>
+           <p id="result-txt"  class=" title"> Relieved </p>
+             
+    </div>
+  </div>  
+  <div id="suffer-div" class="modal">
+    <div class="modal-background is-mobile">
+      
+    </div>
+    <div id="suffer" class="modal-content has-text-centered">
+          <button class="modal-close is-large" aria-label="close" onclick="closesuffer()"></button>
+          <p id="result-txt"> Result </p>
+           <p id="result-txt"  class=" title"> Still Suffering! </p>
+             
+    </div>
+  </div>  
+   
+  <div id="product" class="modal">
+    <div class="modal-background">
+  
+    </div>
+    <div id="output-div" class="modal-content has-text-centered">
+      <div class="card">
+
+      <header class="card-header">
+        <p class="card-header-title">
+          Product
+        </p>
+      </header>
+      <button class="modal-close is-large" aria-label="close" onclick="closeproduct()"></button>
+        <div  class="card-image">
+          
+            <img  id="output" >
+        </div>
+        <footer class="card-footer">
+          <button id="match" class="card-header-title" onclick="matchproduct()"> Match With Infection</button>
+        </footer>
+      </div>
+    </div>
+  </div> 
+  <div id="description-div" class="modal">
+    <div class="modal-background">
+  
+    </div>
+    <div  class="modal-content has-text-centered">
+      <div class="card">
+
+   
+      <button class="modal-close is-large" aria-label="close" onclick="closedescription()"></button>
+        <div  class="card-image">
+          
+            <img  id="description" >
+        </div>
+        <div class="card-content">
+
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <div id="foot">
+    <img src="images/Fidia-logo.svg">
+  </div>
+  <!-- <embed src='SoundURLHere' autostart='true' hidden='true' loop='false' name="jukebox"> -->
+<div id="startgame" class="modal is-active">
+  <div class="modal-background srt">
+  
+</div>
+<div id="strt"  onclick="startGame()">
+
+</div>
+ 
+  </div>
+   
+</div>
+<div id="snackbar"></div>
+</body>
+<script src="wow.min.js"></script>
+
+<script src="script.js"></script>
+</html>

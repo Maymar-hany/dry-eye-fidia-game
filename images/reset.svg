@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="185.636" height="79.837" viewBox="0 0 185.636 79.837">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#86c3db"/>
+      <stop offset="1" stop-color="#b7e2f8"/>
+    </linearGradient>
+  </defs>
+  <g id="reset" transform="translate(-1146 -731.26)">
+    <g id="Group_1455" data-name="Group 1455" transform="translate(1146 731.26)">
+      <rect id="Rectangle_72" data-name="Rectangle 72" width="185.636" height="65.711" rx="18.388" transform="translate(0 14.125)" fill="#1a1a1a" opacity="0.3"/>
+      <rect id="Rectangle_73" data-name="Rectangle 73" width="185.636" height="65.711" rx="18.388" transform="translate(0 7.465)" fill="#6694a3"/>
+      <rect id="Rectangle_74" data-name="Rectangle 74" width="185.636" height="65.711" rx="18.388" transform="translate(0)" fill="url(#linear-gradient)"/>
+      <path id="Path_8052" data-name="Path 8052" d="M1453.361,803.857H1282.5a7.388,7.388,0,0,0-7.388,7.388v3.525a7.388,7.388,0,0,1,7.388-7.388h170.86a7.388,7.388,0,0,1,7.388,7.388v-3.525A7.388,7.388,0,0,0,1453.361,803.857Z" transform="translate(-1275.113 -803.857)" fill="#fff" opacity="0.5"/>
+    </g>
+    <g id="Group_1458" data-name="Group 1458" transform="translate(-2.561)">
+      <g id="refresh" transform="translate(1132.898 745)">
+        <g id="Group_1457" data-name="Group 1457" transform="translate(39.663)">
+          <path id="Path_8054" data-name="Path 8054" d="M67.073,10.59a15.951,15.951,0,0,0-11.353-4.7H53.365L57.144,2.1,55.038,0,47.68,7.377l7.262,7.384,2.12-2.085L53.31,8.861h2.409A13.083,13.083,0,1,1,42.636,21.943V20.457H39.663v1.487A16.056,16.056,0,1,0,67.073,10.59Z" transform="translate(-39.663)" fill="#094462" stroke="#094462" stroke-width="1"/>
+        </g>
+      </g>
+      <text id="RESET-2" data-name="RESET" transform="translate(1219 745)" fill="#094462" font-size="30" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="31">RESET</tspan></text>
+    </g>
+  </g>
+</svg>
