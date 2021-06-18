@@ -219,7 +219,7 @@ var products = document.getElementById('products');
 var medicine = document.getElementById("medicine");
 var patientsdiv=document.getElementById('patients')
 var lab = document.getElementById('labs')
-var result = document.getElementById("relieved-div")
+var result = document.getElementById("relieved")
 var suffer = document.getElementById("suffer-div")
 var amount = document.getElementById("amount-div")
 var toast = document.getElementById("snackbar");
@@ -228,12 +228,15 @@ var resetbtn = document.getElementById('resetbtn')
 var guide = document.getElementById('guide')
 var squares = document.getElementById('squares')
 var startPos = null;
+var open = document.getElementById('relieved')
+let outerClick = true;
 window.onload=function() {
   addCompounds();
   addPatients();
   showMedicine();
   showProducts();
 
+ 
 }
 var med=""
 window.dragMoveListener = dragMoveListener
@@ -254,8 +257,8 @@ function showMedicine ( params  ){
     `
       } */
       med = ` 
-        <div id="${element.id}" class="single-medicine is-hidden  medicine-item"> 
-    <img  id="medicImg" src="${element.img}">
+        <div id="${element.id}" class="single-medicine d-none  medicine-item col-md-12"> 
+    <img  id="medicImg" src="${element.img}" class="img-fluid">
     </div>
     `
    medicine.innerHTML +=med 
@@ -269,18 +272,21 @@ function showProducts(){
     cunt++
     if(element.id==='iridium-gel'){
       med = ` 
-      
-      <div id="${element.class}" class="product-item  is-hidden">
-  <img width="110px" id="medicImg" src="${element.img}">
+      <div id="product-style"  class="swiper-slide">
+      <div id="${element.class}" class="product-item  ">
+  <img width="110px" class="medicImg1" src="${element.img}">
+ </div>
  </div>
   `
     }else{
       med = ` 
      <div id="product-style"  class="swiper-slide">
-      <div id="${element.class}" class="single-product  product-item " onclick = "openDescription(this.id)">
+      <div id="${element.class}" class="single-product   product-item " onclick = "openDescription(this.id)">
     
-  <img  id="medicImg1" src="${element.img}">
-  
+  <img  class="medicImg1" src="${element.img}">
+  <div id="des-txt" class="img__description_layer">
+  <p class="img__description">Click For Description</p>
+</div> 
   </div>      
   </div>
   `
@@ -308,9 +314,9 @@ function addCompounds (){
   
     compound=
     `
-    <div id="item-style" class="column is-6 "> 
-    <div id="${element.id}" class="item mx-auto">
-   <img width="100" height="100"  src="${element.img}" >
+    <div id="item-style" class="col-md-5  col-5"> 
+    <div id="${element.id}" class="item">
+   <img width="75%" height="75%"  src="${element.img}" >
   <p id="name" > ${element.name}</p>
    </div>
    </div>
@@ -326,10 +332,10 @@ function addCompounds (){
 function addPatients (){
   patients.forEach(element => {
     var patient = `
-    <div id="patient-style" class="column is-9">
+    <div id="patient-style" class="col-md-9 col-8">
     <div id="patient-icon">
     <div  id="${element.id}" class="dropzone-patient" data-medic="${element.attribute}">
-    <img width="55" height="55"  src="${element.img}" >
+    <img width="22%" height="22%"  src="${element.img}" >
     <span id="patient-text-white"> ${element.id}</span>
      </div>   
     </div
@@ -447,7 +453,15 @@ interact('.item')
       activated=item.id
      
       if(item.id==='hyaluronic'&& !item.className.includes('concentration-added')){
-        amount.classList.add('is-active')
+    /*     let closeAmount = () => { //MODAL HIDE
+          amount.style.display = 'none';
+          amount.style.opacity = 0;
+      };
+         amount.style.display = "block";
+        amount.style.paddingRight = "17px";
+        amount.style.backgroundColor = 'rgba(0,0,0,0.5)'
+        amount.className="modal fade show";  */
+        $('#amount-div').modal('show')
         //item.classList.remove('item')
         item.classList.add('concentration-added')
        }
@@ -503,25 +517,26 @@ interact('.item')
       var currentmedic = document.getElementById(show.id)
       if(currentmedic !== null){
       if(currentmedic.className.includes('medicine-item')){
-        currentmedic.classList.add('is-hidden')
+        currentmedic.classList.add('d-none')
       }
     }
     },
    
     ondrop:function(event){
       const item = event.relatedTarget
- 
-      dropzoneElement  = event.target,
+      item.classList.add('dropped')
+      /* dropzoneElement  = event.target,
       dropRect         = interact.getElementRect(dropzoneElement)
+      console.log(dropRect);
    
-     var   x= dropRect.left + dropRect.width  / 8
-     var   y= dropRect.top  + dropRect.height / 2
-      console.log(dropRect.left);
+     var   x= dropRect.left + 10
+     var   y=  dropRect.height / 8
+      console.log(dropRect);
       item.style.webkitTransform =
       item.style.transform =
-        'translate(' +'-'+ x + 'px, ' + 0 + 'px)'
+        'translate(' +'-'+ x + 'px, ' + y + 'px)'
         item.setAttribute('data-x', x)
-        item.setAttribute('data-y', 0)
+        item.setAttribute('data-y', y) */
       guide.style.display='none'
       //squares.style.display="inline-flex"
       if(count > 3 && !item.className.includes('dropped')){
@@ -548,10 +563,11 @@ interact('.item')
        var data = event.relatedTarget.id
        var target = event.target
        medicdiv = document.createElement('div')
+       count++
        addConcentration();
        resetbtn.style.display="inline"
        var rect = document.getElementById('components').getBoundingClientRect();
-       console.log(rect.left);
+      
   },
 })
 
@@ -610,100 +626,144 @@ interact('.item')
       const item = event.relatedTarget
     
       if (!item.className.includes('dragging')){
-        result.classList.add('is-active')
+        $('#relieved').modal('show')
       document.getElementById("score").innerHTML = ++score;
       audio.play();
-      document.getElementById('medicImg1').style.opacity='1'
+      var currentProduct= show.id
+      
+     document.getElementById(currentProduct+'1').querySelector('.medicImg1').style.opacity='1'
+     show.classList.add('d-none')
+     var em = document.getElementById(currentProduct+'1').querySelector('.medicImg1')
+     var  elementOpacity = window.getComputedStyle(em).getPropertyValue("opacity");
+     var descripTxt = document.getElementById('des-txt')
+       if(elementOpacity==1){
+        descripTxt.style.display="flex"}
       hint.style.display='none'
       guide.style.display='inline-block'
        console.log('matched');
       }else{
-        suffer.classList.add('is-active')
-        
+        $('#suffer-div').modal('show')
+    /*     
+        let closeSuffer = () => { //MODAL HIDE
+          suffer.style.display = 'none';
+          suffer.style.opacity = 0;
+      };
+         suffer.style.display = "block";
+        suffer.style.paddingRight = "17px";
+        suffer.style.backgroundColor = 'rgba(0,0,0,0.5)'
+        suffer.className="modal fade show"; 
+        suffer.onclick = () => {
+          if(outerClick){ closeSuffer(); }
+          outerClick = true;
+      }; */
+      }
+      result.onclick = () => {
+        if (score===medicines.length){
+          openfinalscore();
+         }
       }
     
+    
     }
+    
 
   })
 
    function openfinalscore(){
-    var winner =  document.getElementById("winner");
+  
     var audio = new Audio('winsound.mp3');
-    winner.classList.add('is-active')
+    
     audio.play();
     document.getElementById("sc").innerHTML=score;
-    
+    $('#winner').modal('show')
+    console.log("final");
   }
   function closefinalscore(){
     winner.classList.remove('is-active')
   }
   function matchproduct(){
     product.classList.remove('is-active')
-    show.classList.remove('is-hidden')
+    show.classList.remove('d-none')
   }
   function closeproduct(){
-    show.classList.remove('is-hidden')
+    show.classList.remove('d-none')
     console.log(show);
     product.classList.remove('is-active')
   }
   function closeresult(){
-    show.classList.add('is-hidden')
-    result.classList.remove('is-active')
+    
+ 
+      
+
    //var productStyle= document.getElementById('product-style')
    // productResult.classList.add('swiper-slide')
-      productResult.classList.remove('is-hidden')
+      productResult.classList.remove('d-none')
      // dropped1.classList.remove('is-hidden')
                 
-                if (score===medicines.length){
+                if (score===1){
                   openfinalscore();
                  }
   }
   function closesuffer(){
-    
-    suffer.classList.remove('is-active')
+   
+      suffer.style.display = 'none';
+      suffer.style.opacity = 0;
+ 
   }
 function startGame() {
   var start = document.getElementById("startgame")
-  start.classList.remove('is-active')
+  start.classList.add('d-none')
+  document.body.style.overflowY = "scroll";
 
 }
-var descrip = document.getElementById("description-div")
+
 var descripClicked=0
 function openDescription(productId) {
-   descripClicked=1
-  var decription= document.getElementById("description");
-  var newid = productId.slice(0, -1);
-  medicines.forEach(element => {
-    if(element.id == newid){
-      decription.src=element.des
-      
-    }
-  })
-  descrip.classList.add('is-active')
+  var em = document.getElementById(productId).querySelector('.medicImg1')
+var  elementOpacity = window.getComputedStyle(em).getPropertyValue("opacity");
+var descripTxt = document.getElementById('des-txt')
+  if(elementOpacity==1){
+   descripTxt.style.display="flex"
+    descripClicked=1
+    var decription= document.getElementById("description");
+    var newid = productId.slice(0, -1);
+    medicines.forEach(element => {
+      if(element.id == newid){
+        decription.src=element.des
+        
+      } 
+    })
+    $('#description-div').modal('show')
+   
+  }
+
+
   
 }
 function closedescription(){
   descrip.classList.remove('is-active')
 }
 function concentrate(id) {
+ 
   concentartion =id
-  amount.classList.remove('is-active')
+  $('#amount-div').modal('hide')
 }
 window.onclick = function(event) {
+  
   if(show !=''){
     var medicineClick =show.querySelector('#medicImg')
   }
   if(event.target!=suffer && event.target!=medicineClick ){ 
     suffer.classList.remove('is-active')
   }
-   if(result.className.includes('is-active') &&event.target!=medicineClick ) {
+   if(result.className.includes('show') &&event.target!=medicineClick ) {
     closeresult()
    }
 }
 
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
-  spaceBetween: 0,
+  spaceBetween: 10,
   slidesPerGroup: 3,
   loop: true,
   loopFillGroupWithBlank: true,
@@ -715,6 +775,8 @@ var swiper = new Swiper(".mySwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  observer: true,  
+       observeParents: true,
 });
 function reset (){
   guide.style.display='block'
@@ -785,6 +847,7 @@ function addConcentration(){
  compined[`${three}+${two}+${one}`] ||
  compined[`${three}+${one}+${two}`] ||
  compined[`${one}+${two}`] || compined[`${two}+${one}`]
+ 
 if(medicTarget!==undefined ){
 
   medicines.forEach(element => {
@@ -799,8 +862,8 @@ if(medicTarget!==undefined ){
       
 //var compare = document.querySelector("#"+productResult.id).querySelector('#medicImg').getAttribute('src')
 
-      if(!productResult.className.includes('is-hidden')){
-        if(medicTarget==='images/iridium-gel.png'){
+      if(!productResult.className.includes('d-none')){
+      /*   if(medicTarget==='images/iridium-gel.png'){
           output.style.height = '150px';
           output.style.width = '200px';
           output.src=medicTarget
@@ -808,7 +871,7 @@ if(medicTarget!==undefined ){
           output.style.height = '328px';
           output.style.width = '168px'; 
           output.src=medicTarget
-        }
+        } */
         if (one==='hyaluronic'+concentartion){
           dropped1 = document.getElementById('hyaluronic')
          }else{
@@ -864,33 +927,29 @@ if(medicTarget!==undefined ){
         setTimeout(function(){
           resetbtn.style.display="none"
       hint.style.display='block'
-          show.classList.remove('is-hidden')
+          show.classList.remove('d-none')
+          console.log(show);
+         
           audio.play();
       },2000)
        setTimeout(function(){
         item2=''
         array=[]
        }, 3000)   
-      }
-
+      
+      
   
-}else if(medicTarget== undefined && count>1){
+}}
+
+
+
+})}else if(medicTarget== undefined && array.length >1 ){
+  
 toast.innerHTML= `Can't be mixed please try again`
   toast.style.backgroundColor="rgba(201, 10, 10, 0.753)"
   toast.className = "show";
   setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 4000); 
 }
-
-/* if(!item.className.includes('dropped')){
-do {
-  count++
-  item.classList.add('dropped')
-} while (!item.className.includes('dropped'));
-
-} */
-
-
-})}
 
 }
 var list = document.getElementsByClassName("amount-btn");
@@ -899,4 +958,4 @@ for (var i = 0; i < list.length; i++) {
     
    )
    
-} 
+}

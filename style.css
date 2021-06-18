@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
 #start {
     height: 100%;
     width: 100%;
@@ -5,32 +8,33 @@
   #compounds{
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    
 
    
   }
   #comp-txt{
-    margin-top: 15px;
-    font-size: 30px;
-    
+    margin-top: 10px;
+    font-size: 2.3vw;
+    margin-left: 15px;
     color: #f49225;
     font-family:'firstjob-font';
   }
   #patient-txt{
-    margin-left: 45px;
-    margin-top: 40px;
-    font-size: 30px;
+    margin-right: 15px;
+    font-size: 2.3vw;
     
     color: #f49225;
     font-family:'firstjob-font';
   }
   #patient-text-white{
+    font-family: 'Roboto';
     
     color: #fff;
     text-align: center;
     position: absolute;
     margin-left: 10px;
     margin-top: 15px;
+    font-size: 1.3vw;
   }
 
 #squares{
@@ -56,9 +60,9 @@
     -webkit-background-size: 100%;
     -moz-background-size: cover;
     -o-background-size: cover;
-     min-height: 80%;
-     padding: 40px;
-     
+     padding:  30px;
+     padding-left: 80px;
+     padding-bottom: 50px;
   }
   
   #output-div{
@@ -150,7 +154,7 @@
     }   
 }
 @media (min-width: 1025px){
-.modal-background.srt{
+.srt{
     background-image: url('images/start-bg.jpg');
     background-position: top center;
     background-repeat: no-repeat;
@@ -163,7 +167,7 @@
 }
 }
 #strt{
-    text-align: center;
+    margin-left: 340px;
     position: absolute;
      bottom: 0px;
     cursor: pointer;
@@ -172,19 +176,16 @@
 }
 
 
-    #patients{
-        margin-top: 10px;
-        padding: 10px;
-    }
+   
   
     
 
-html {
+body {
     background-image: url('images/background.svg');
     
     background-repeat: no-repeat;
     background-size: cover; 
-    
+    overflow: hidden;
     -moz-background-size: cover;
     -o-background-size: cover;
      min-height: 100%;
@@ -203,8 +204,8 @@ html {
   background-size: cover; 
   -moz-background-size: cover;
   -o-background-size: cover;
-  margin-left: 20px;
    justify-content: center;
+   height: 350px;
 }
 
 .amount-btn{
@@ -216,16 +217,19 @@ html {
     color:#163861 ;
     border: transparent;
 }
-#relieved{
-  padding: 40px;
-  background-image: url('images/paused_button.svg');
+.modal-body{
+  padding: 70px;
+ 
+  background-image: url('images/paused_button.svg') !important;
   background-position: top;
   background-size: cover;
   -webkit-background-size: 100%;
   background-repeat: no-repeat;
-  width: 500px;
+  
   height: fit-content;
-  color: #163861;
+  
+  border: 0px;
+  color: #163861 !important;
 }
 #suffer{
   padding: 40px;
@@ -258,20 +262,23 @@ html {
 }
 #result-txt{
     
-        margin-top: 25px; 
+        margin-top: 10px; 
         color: #163861;
         font-weight: bold;
+        font-size: 20px;
+        
+       
     
 }
 #resetbtn{
   display: none;
   float: right;
   background: transparent;
-  margin-right: 10px;
+  margin-right: 20px;
   margin-top: 250px;
   border: 0px;
-  width: 150px;
-  height: 60px;
+  width: 100px;
+  height: 40px;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url('images/reset.svg');
@@ -281,12 +288,47 @@ html {
  width:50px
 }
 .single-product{
-    
-    width: 70px;
+    position: relative;
+
     margin-bottom: 15px;
     padding: 5px;
-   margin-right: 25px;
-    height: 80px;
+   margin-left: 25px;
+
+}
+
+.img__description_layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #00446683;
+  color: #fff;
+  visibility: hidden;
+ 
+  opacity: 0;
+
+  align-items: center;
+  justify-content: center;
+  display: none;
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.single-product:hover .img__description_layer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img__description {
+  font-size: 1vw;
+  transition: .2s;
+  transform: translateY(1em);
+  text-align: center;
+}
+
+.single-product:hover .img__description {
+  transform: translateY(0);
 }
 #lab{
     font-size: 20px;
@@ -329,9 +371,9 @@ top:0;
 #name{
   margin: 0px auto;
  position:absolute;
- bottom:10px;
+ bottom:2px;
  width: 100%;
- font-size: small;
+ font-size: 1vw;
 text-align: center;
 font-family: "Roboto";
 }
@@ -400,15 +442,15 @@ p{
 }
 #patients{
   background-image: url('images/left.svg');
-  background-position: top center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover; 
   -webkit-background-size: 100%;
   -moz-background-size: cover;
   -o-background-size: cover;
-   min-height: 80%;
-   padding-bottom: 30px;
-   padding-left: 65px;
+  padding:  35px;
+  padding-left: 80px;
+  
 }
 
 #patient-style{
@@ -426,8 +468,7 @@ p{
     
 }
 #product-style{
-  margin-left: 8px;
- 
+
     cursor: pointer;
     padding-bottom: 17px;
     
@@ -449,7 +490,6 @@ p{
    
     #medicine{
         margin-top: 30px;
-        margin-left:30px ;
         position: relative;
     }
     .single-medicine{
@@ -521,8 +561,9 @@ p{
     font-size: 20px;
     color:#004466
   } 
-  #medicImg1{
+  .medicImg1{
     opacity: 0.5;
+    vertical-align: bottom;
   }
 @media(max-width: 767px) {
     .reverse-columns {
@@ -542,19 +583,19 @@ p{
   
   .centered {
     position: absolute;
-    font-size: 17px;
-    top: 50%;
-    left: 60%;
-    transform: translate(-50%, -50%);
+    font-size: 1vw;
+    top: 10%;
+    left: 30%;
+    
+  }
+  #hintImg{
+    width: 105%;
   }
   #hint {
     position: relative;
     text-align: center;
     color: white;
-    width: 400px;
-    float: right;
-    margin-right: 20px;
-    margin-top: 40px;
+    margin-top: 50px;
     display: none;
   }
   .swiper-container {
@@ -566,13 +607,54 @@ p{
     background-image: url('images/arrow-right.svg');
     background-repeat: no-repeat;
     background-size: cover;
+    
     -webkit-background-size: 100%;
     color: transparent !important;
   }
   .swiper-button-prev{
+    margin-right: 20px;
     background-image: url('images/arrow-left.svg');
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: 100%;
     color: transparent !important;
   }
+  /*  .modal {
+    background-color: rgba(0,0,0,0.4); /* Transparent dimmed overlay 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  .modal .container {
+  
+   text-align: center;
+   vertical-align: middle;
+   width: 200px;
+  }  */
+  .modal-content{
+    
+   
+    background-color: transparent !important;
+    display: inline-block;
+    border: 0px !important;
+    
+  }
+   .srt{
+    background-image: url('images/start-bg.jpg');
+    position: absolute;
+   z-index: 99999999;
+    display: block;
+    height:100%;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+} 
