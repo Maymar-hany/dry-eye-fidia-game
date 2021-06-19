@@ -185,7 +185,7 @@ body {
     
     background-repeat: no-repeat;
     background-size: cover; 
-    overflow: hidden;
+    
     -moz-background-size: cover;
     -o-background-size: cover;
      min-height: 100%;
@@ -649,12 +649,12 @@ p{
   }
    .srt{
     background-image: url('images/start-bg.jpg');
-    position: absolute;
-   z-index: 99999999;
-    display: block;
-    height:100%;
-    top:0px;
-    right:0px;
-    bottom:0px;
-    left:0px;
+    position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 99999999999;
 } 

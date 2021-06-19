@@ -829,6 +829,7 @@ console.log(item2);
 }
 function addConcentration(){
   array = item2.split("+");
+  if(array.length<4){
   console.log(array);
   for (let index = 0; index < array.length; index++) {
     if(array[index]==='hyaluronic') {
@@ -836,7 +837,6 @@ function addConcentration(){
       
     }}
 
- console.log(array);
  var one =array[0]
  var two = array[1]
  var three = array[2]
@@ -943,14 +943,27 @@ if(medicTarget!==undefined ){
 
 
 
-})}else if(medicTarget== undefined && array.length >1 ){
+})
+compined[`${one}+${two}+${three}`] ||compined[`${one}+${three}+${two}`]||
+  compined[`${two}+${one}+${three}`] ||
+ compined[`${two}+${three}+${one}`] ||
+ compined[`${three}+${two}+${one}`] ||
+ compined[`${three}+${one}+${two}`] ||
+ compined[`${one}+${two}`] || compined[`${two}+${one}`] ?.['found' ]
+ console.log(compined);
+}else if(medicTarget== undefined && array.length >1 ){
   
 toast.innerHTML= `Can't be mixed please try again`
   toast.style.backgroundColor="rgba(201, 10, 10, 0.753)"
   toast.className = "show";
   setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 4000); 
 }
-
+}else{
+  toast.innerHTML= `No More Components allowed`
+  toast.style.backgroundColor="rgba(201, 10, 10, 0.753)"
+  toast.className = "show";
+  setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 4000); 
+}
 }
 var list = document.getElementsByClassName("amount-btn");
 for (var i = 0; i < list.length; i++) {
