@@ -17,7 +17,7 @@ var infictions = [
   'images/hyalfid.png':'Long-screen',
   'images/tioretin.png':'Diabetic', 
   'images/edenorm.png':'Post-surgery', 
-  'images/tearfid.png':'Meibomian', 
+  'images/tearfid.png':'Evaporative Dry Eye', 
   'images/iridium.png':'Dry-eye',
   'images/ribolisin.png':'Uv-light',
   'images/iridium-gel.png':'Red-eye',
@@ -169,7 +169,7 @@ var patients =[
   },
   {
     attribute:'images/tearfid.png',
-    id:'Meibomian',
+    id:'Evaporative Dry Eye',
     infiction:'',
     img:'images/icon2.svg'
   },
@@ -935,7 +935,7 @@ if(medicTarget!==undefined ){
        setTimeout(function(){
         item2=''
         array=[]
-       }, 3000)   
+       }, 2000)   
       
       
   
