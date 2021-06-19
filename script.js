@@ -928,10 +928,10 @@ if(medicTarget!==undefined ){
           resetbtn.style.display="none"
       hint.style.display='block'
           show.classList.remove('d-none')
-          console.log(show);
+          
          
           audio.play();
-      },2000)
+      },1000)
        setTimeout(function(){
         item2=''
         array=[]
