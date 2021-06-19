@@ -858,6 +858,10 @@ if(medicTarget!==undefined ){
     if(element.img === medicTarget){
       
       show = document.getElementById(element.id)
+      console.log(show);
+      var em = document.getElementById(show.id+'1').querySelector('.medicImg1')
+      var  elementOpacity = window.getComputedStyle(em).getPropertyValue("opacity");
+      if(elementOpacity!=1){
       var product = document.getElementById("product");
       var output= document.getElementById("output");
       
@@ -943,18 +947,17 @@ if(medicTarget!==undefined ){
       
       
   
-}}
+}
 
-
-
+}else{
+  toast.innerHTML= `Already Found`
+  toast.style.backgroundColor="rgba(201, 10, 10, 0.753)"
+  toast.className = "show";
+  setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 4000); 
+}
+    }
 })
-compined[`${one}+${two}+${three}`] ||compined[`${one}+${three}+${two}`]||
-  compined[`${two}+${one}+${three}`] ||
- compined[`${two}+${three}+${one}`] ||
- compined[`${three}+${two}+${one}`] ||
- compined[`${three}+${one}+${two}`] ||
- compined[`${one}+${two}`] || compined[`${two}+${one}`] ? ['found' ] :['']
- console.log(compined);
+
 }else if(medicTarget== undefined && array.length >1 ){
   
 toast.innerHTML= `Can't be mixed please try again`
