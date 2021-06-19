@@ -949,7 +949,7 @@ compined[`${one}+${two}+${three}`] ||compined[`${one}+${three}+${two}`]||
  compined[`${two}+${three}+${one}`] ||
  compined[`${three}+${two}+${one}`] ||
  compined[`${three}+${one}+${two}`] ||
- compined[`${one}+${two}`] || compined[`${two}+${one}`] ?.['found' ]
+ compined[`${one}+${two}`] || compined[`${two}+${one}`] ? ['found' ] :['']
  console.log(compined);
 }else if(medicTarget== undefined && array.length >1 ){
   
