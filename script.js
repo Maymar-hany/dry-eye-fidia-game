@@ -634,10 +634,13 @@ interact('.item')
      document.getElementById(currentProduct+'1').querySelector('.medicImg1').style.opacity='1'
      show.classList.add('d-none')
      var em = document.getElementById(currentProduct+'1').querySelector('.medicImg1')
+     console.log(em);
      var  elementOpacity = window.getComputedStyle(em).getPropertyValue("opacity");
-     var descripTxt = document.getElementById('des-txt')
-       if(elementOpacity==1){
-        descripTxt.style.display="flex"}
+     var descripTxt =document.getElementById(currentProduct+'1').querySelector('#des-txt')
+     console.log(elementOpacity);
+       if(elementOpacity=='1'){
+        descripTxt.style.display="flex"
+      }
       hint.style.display='none'
       guide.style.display='inline-block'
        console.log('matched');
@@ -722,8 +725,9 @@ function openDescription(productId) {
   var em = document.getElementById(productId).querySelector('.medicImg1')
 var  elementOpacity = window.getComputedStyle(em).getPropertyValue("opacity");
 var descripTxt = document.getElementById('des-txt')
+
   if(elementOpacity==1){
-   descripTxt.style.display="flex"
+  
     descripClicked=1
     var decription= document.getElementById("description");
     var newid = productId.slice(0, -1);
