@@ -12,15 +12,15 @@ var compined={
 }
 var infictions = [
  { 
-  'images/trium.png':'eye-post',
-  'images/hyalfid-gel.png':'long-screen' ,
-  'images/hyalfid.png':'long-screen',
-  'images/tioretin.png':'diabetic', 
-  'images/edenorm.png':'post-surgery', 
+  'images/trium.png':'Eye-post',
+  'images/hyalfid-gel.png':'Long-screen' ,
+  'images/hyalfid.png':'Long-screen',
+  'images/tioretin.png':'Diabetic', 
+  'images/edenorm.png':'Post-surgery', 
   'images/tearfid.png':'Meibomian', 
-  'images/iridium.png':'dry-eye',
-  'images/ribolisin.png':'uv-light',
-  'images/iridium-gel.png':'red-eye',
+  'images/iridium.png':'Dry-eye',
+  'images/ribolisin.png':'Uv-light',
+  'images/iridium-gel.png':'Red-eye',
  }
  
 ]
@@ -150,20 +150,20 @@ var medicines=[
 var patients =[
   {
     attribute:'images/trium.png',
-    id:'eye-post',
+    id:'Eye-post',
     infiction:'Patients with dry eye post eye surgery',
     img:'images/icon1.svg'
   },
   {
     attribute:'images/hyalfid.png',
-    id:'long-screen',
+    id:'Long-screen',
     infiction:'Patients with Multifactorial Dry eye e.g long screen time',
     img:'images/icon4.svg'
   },
   
   {
     attribute:'images/edenorm.png',
-    id:'post-surgery',
+    id:'Post-surgery',
     
     img:'images/icon7.svg'
   },
@@ -175,25 +175,25 @@ var patients =[
   },
   {
     attribute:'images/iridium.png',
-    id:'dry-eye',
+    id:'Dry-eye',
     infiction:'',
     img:'images/icon8.svg'
   },
   {
     attribute:'images/tioretin.png',
-    id:'diabetic',
+    id:'Diabetic',
     infiction:'',
     img:'images/icon5.svg'
   },
   {
     attribute:'images/ribolisin.png',
-    id:'uv-light',
+    id:'Uv-light',
     infiction:'',
     img:'images/icon3.svg'
   },
   {
     attribute:'images/iridium-gel.png',
-    id:'red-eye',
+    id:'Red-eye',
     infiction:'',
     img:'images/icon6.svg'
   },
