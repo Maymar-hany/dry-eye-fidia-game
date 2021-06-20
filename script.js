@@ -230,12 +230,13 @@ var squares = document.getElementById('squares')
 var startPos = null;
 var open = document.getElementById('relieved')
 let outerClick = true;
+
 window.onload=function() {
   addCompounds();
   addPatients();
   showMedicine();
   showProducts();
-
+ 
  
 }
 var med=""
@@ -285,7 +286,7 @@ function showProducts(){
      <div id="product-style"  class="swiper-slide">
       <div id="${element.class}" class="single-product   product-item " onclick = "openDescription(this.id)">
     
-  <img  class="medicImg1" src="${element.img}">
+  <img    class="medicImg1" src="${element.img}">
   <div id="des-txt" class="img__description_layer">
   <p class="img__description">Click For Description</p>
 </div> 
@@ -715,7 +716,8 @@ function startGame() {
   var start = document.getElementById("startgame")
   start.classList.add('d-none')
   document.body.style.overflowY = "scroll";
-
+  var intro = new Audio('intro.mp3');
+  intro.play()
 }
 
 var descripClicked=0
@@ -807,7 +809,8 @@ function reset (){
                }else{
                 dropped3 = document.getElementById(three)
                }
-        
+  
+  
   resetbtn.style.display="none"
   dropped1.classList.remove('can-drop')
   dropped1.classList.add('cannot-drop')
@@ -815,20 +818,28 @@ function reset (){
   dropped1.classList.remove('concentration-added')
   dropped1.classList.remove('cant-drop','shake','dropped')
 dropped1.style.transform="none"
+ dropped1.setAttribute('data-x', 0)
+dropped1.setAttribute('data-y',0)  
 if(dropped2!=null){
 dropped2.classList.remove('can-drop')
 dropped2.classList.add('cannot-drop')
 dropped2.classList.remove('drop-target')
 dropped2.classList.remove('concentration-added')
 dropped2.classList.remove('cant-drop','shake','dropped')
-dropped2.style.transform="none"}
+dropped2.style.transform="none"
+dropped2.setAttribute('data-x', 0)
+dropped2.setAttribute('data-y',0)  
+}
 if(dropped3!=null){
 dropped3.classList.remove('can-drop')
 dropped3.classList.add('cannot-drop')
 dropped3.classList.remove('drop-target')
 dropped3.classList.remove('concentration-added')
 dropped3.classList.remove('cant-drop','shake','dropped')
-dropped3.style.transform="none"}
+dropped3.style.transform="none"
+dropped3.setAttribute('data-x', 0)
+dropped3.setAttribute('data-y',0)  
+}
 
 item2=''
 array=[]
@@ -906,6 +917,7 @@ if(medicTarget!==undefined ){
           setTimeout(function(){
             dropped1.classList.remove('animate__animated','animate__rollOut','animate__slow')
             dropped1.classList.remove('can-drop')
+            dropped1.classList.remove('concentration-added')
             dropped1.classList.add('cannot-drop')
             dropped1.classList.remove('drop-target')
            // dropped1.classList.remove('concentration-added')
@@ -914,6 +926,7 @@ if(medicTarget!==undefined ){
           dropped2.classList.remove('animate__animated','animate__rollOut','animate__slow')
           dropped2.classList.remove('can-drop')
          dropped2.classList.add('cannot-drop')
+         dropped2.classList.remove('concentration-added')
          dropped2.classList.remove('drop-target')
          //dropped2.classList.remove('concentration-added')
          dropped2.classList.remove('cant-drop','shake','dropped')
@@ -927,7 +940,7 @@ if(medicTarget!==undefined ){
             dropped3.classList.remove('can-drop')
             dropped3.classList.add('cannot-drop')
             dropped3.classList.remove('drop-target')
-           // dropped3.classList.remove('concentration-added')
+            dropped3.classList.remove('concentration-added')
             dropped3.classList.remove('cant-drop','shake','dropped')
           dropped3.style.transform="none"
           dropped3.classList.remove('animate__animated','animate__rollOut','animate__slow')

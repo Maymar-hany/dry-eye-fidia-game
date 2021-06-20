@@ -152,11 +152,11 @@
         
     } 
     #strt{
-      margin-left: 340px;
+      margin-left: 450px;
       position: absolute;
        bottom: 0px;
       cursor: pointer;
-      width: 300px;
+      width: 350px;
       height: 200px;
   }  
 }
