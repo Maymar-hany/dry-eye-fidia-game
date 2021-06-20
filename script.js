@@ -230,13 +230,13 @@ var squares = document.getElementById('squares')
 var startPos = null;
 var open = document.getElementById('relieved')
 let outerClick = true;
-
+var intro = new Audio('intro.mp3');
 window.onload=function() {
   addCompounds();
   addPatients();
   showMedicine();
   showProducts();
- 
+  
  
 }
 var med=""
@@ -693,10 +693,7 @@ interact('.item')
     product.classList.remove('is-active')
   }
   function closeresult(){
-    
- 
-      
-
+  
    //var productStyle= document.getElementById('product-style')
    // productResult.classList.add('swiper-slide')
       productResult.classList.remove('d-none')
@@ -716,9 +713,10 @@ function startGame() {
   var start = document.getElementById("startgame")
   start.classList.add('d-none')
   document.body.style.overflowY = "scroll";
-  var intro = new Audio('intro.mp3');
-  intro.volume='0.05'
-  intro.play()
+  $('#intro').get(0).play()
+  $('#intro').get(0).volume="0.05"
+  
+
 }
 
 var descripClicked=0
@@ -996,17 +994,24 @@ for (var i = 0; i < list.length; i++) {
    )
    
 }
-/* $(document).ready(function() {
-  var state = "playing";
+
+$(document).ready(function() {
+  var state = "paused";
+
+  
   $('#pause').on('click', function() {
     if(state == 'paused') {
+      $('#intro').get(0).pause()
       state = "playing";
       $("#circle").attr("class", "play");
       $("#from_pause_to_play")[0].beginElement();
     } else {
       state = "paused";
+      
+      $('#intro').get(0).play()
+      $('#intro').get(0).volume="0.05"
       $("#circle").attr("class", "");
       $("#from_play_to_pause")[0].beginElement();
     }
   });
-}); */
+});
