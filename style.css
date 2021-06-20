@@ -150,7 +150,15 @@
         -o-background-size: cover;
          min-height: 100%;
         
-    }   
+    } 
+    #strt{
+      margin-left: 340px;
+      position: absolute;
+       bottom: 0px;
+      cursor: pointer;
+      width: 300px;
+      height: 200px;
+  }  
 }
 @media (min-width: 1025px){
 .srt{
@@ -164,15 +172,36 @@
      min-height: 100%;
     
 }
-}
 #strt{
-    margin-left: 340px;
-    position: absolute;
-     bottom: 0px;
-    cursor: pointer;
-    width: 300px;
-    height: 200px;
+  margin-left: 340px;
+  position: absolute;
+   bottom: 0px;
+  cursor: pointer;
+  width: 300px;
+  height: 200px;
+} 
 }
+@media (max-width: 480px){
+  #strt{
+    position: absolute;
+    bottom: 0px;
+   cursor: pointer;
+   width: 300px;
+   height: 200px;
+  }
+  .srt{
+      background-image: url('images/start-bg-mb.jpg');
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: cover; 
+      -webkit-background-size: 100%;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+       min-height: 100%;
+      
+  }
+  }
+
 
 
    

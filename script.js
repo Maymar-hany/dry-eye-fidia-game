@@ -509,7 +509,7 @@ interact('.item')
                dropped3 = document.getElementById(three)
               }
       resetbtn.style.display="none"
-       console.log(array);    
+          
       if(count!=0){
         count-=1
       }
@@ -598,7 +598,7 @@ interact('.item')
          
        }
        var targetid= event.target.id
-      console.log(targetid);
+     
       var attr=document.getElementById(targetid).getAttribute('data-medic')
      
      // var i = document.querySelector("#"+targetid).querySelector("#check")
@@ -636,16 +636,16 @@ interact('.item')
      document.getElementById(currentProduct+'1').querySelector('.medicImg1').style.opacity='1'
      show.classList.add('d-none')
      var em = document.getElementById(currentProduct+'1').querySelector('.medicImg1')
-     console.log(em);
+     
      var  elementOpacity = window.getComputedStyle(em).getPropertyValue("opacity");
      var descripTxt =document.getElementById(currentProduct+'1').querySelector('#des-txt')
-     console.log(elementOpacity);
+    
        if(elementOpacity=='1'){
         descripTxt.style.display="flex"
       }
       hint.style.display='none'
       guide.style.display='inline-block'
-       console.log('matched');
+      
       }else{
         $('#suffer-div').modal('show')
     /*     
@@ -681,7 +681,7 @@ interact('.item')
     audio.play();
     document.getElementById("sc").innerHTML=score;
     $('#winner').modal('show')
-    console.log("final");
+    
   }
   function closefinalscore(){
     winner.classList.remove('is-active')
@@ -692,7 +692,6 @@ interact('.item')
   }
   function closeproduct(){
     show.classList.remove('d-none')
-    console.log(show);
     product.classList.remove('is-active')
   }
   function closeresult(){
@@ -787,7 +786,7 @@ var swiper = new Swiper(".mySwiper", {
 function reset (){
   guide.style.display='block'
    hint.style.display="none"
-   console.log(show);
+  
    if(show !== ''){
     show.classList.add('d-none')
    }
@@ -836,12 +835,12 @@ dropped3.style.transform="none"}
 
 item2=''
 array=[]
-console.log(item2);
+
 }
 function addConcentration(){
   array = item2.split("+");
   if(array.length<4){
-  console.log(array);
+
   for (let index = 0; index < array.length; index++) {
     if(array[index]==='hyaluronic') {
      array[index]='hyaluronic'+concentartion
@@ -865,7 +864,7 @@ if(medicTarget!==undefined ){
     if(element.img === medicTarget){
       
       show = document.getElementById(element.id)
-      console.log(show);
+     
       var em = document.getElementById(show.id+'1').querySelector('.medicImg1')
       var  elementOpacity = window.getComputedStyle(em).getPropertyValue("opacity");
       if(elementOpacity!=1){
@@ -896,7 +895,7 @@ if(medicTarget!==undefined ){
           dropped2 = document.getElementById('hyaluronic')
          }else{
           dropped2 = document.getElementById(two)
-          console.log(dropped2);
+          
          }
          if (three==='hyaluronic'+concentartion){
           dropped3 = document.getElementById('hyaluronic')
@@ -927,7 +926,7 @@ if(medicTarget!==undefined ){
           if(dropped3!==null){
             dropped3.classList.add('animate__animated','animate__rollOut','animate__slow')
           setTimeout(function(){
-            console.log(dropped3);
+            
             dropped3.classList.remove('can-drop')
             dropped3.classList.add('cannot-drop')
             dropped3.classList.remove('drop-target')
