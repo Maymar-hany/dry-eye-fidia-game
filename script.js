@@ -274,7 +274,7 @@ function showProducts(){
     if(element.id==='iridium-gel'){
       med = ` 
       <div id="product-style"  class="swiper-slide">
-      <div id="${element.class}" class="product-item   "   onclick = "openDescription(this.id)>
+      <div id="${element.class}" class="product-item   "   onclick = "openDescription(this.id)">
   <img width="110px" class="medicImg1" src="${element.img}">
   <div id="des-txt" class="img__description_layer">
   <p class="img__description">Click For Description</p>
