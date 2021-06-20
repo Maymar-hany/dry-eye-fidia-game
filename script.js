@@ -12,7 +12,7 @@ var compined={
 }
 var infictions = [
  { 
-  'images/trium.png':'Eye-post',
+  'images/trium.png':'Surgery & Trauma',
   'images/hyalfid-gel.png':'Multifactorial Dry Eye' ,
   'images/hyalfid.png':'Multifactorial Dry Eye',
   'images/tioretin.png':'Diabetes', 
@@ -150,7 +150,7 @@ var medicines=[
 var patients =[
   {
     attribute:'images/trium.png',
-    id:'Eye-post',
+    id:'Surgery & Trauma',
     infiction:'Patients with dry eye post eye surgery',
     img:'images/icon1.svg'
   },
