@@ -717,6 +717,7 @@ function startGame() {
   start.classList.add('d-none')
   document.body.style.overflowY = "scroll";
   var intro = new Audio('intro.mp3');
+  intro.volume='0.05'
   intro.play()
 }
 
@@ -793,6 +794,7 @@ function reset (){
   var one =array[0]
        var two = array[1]
        var three = array[2]
+      
          if (one==='hyaluronic'+concentartion){
                 dropped1 = document.getElementById('hyaluronic')
                }else{
@@ -953,13 +955,11 @@ if(medicTarget!==undefined ){
       hint.style.display='block'
           show.classList.remove('d-none')
           
-         
+          item2=''
+          array=[]
           audio.play();
       },1000)
-       setTimeout(function(){
-        item2=''
-        array=[]
-       }, 2000)   
+       
       
       
   
@@ -987,6 +987,7 @@ toast.innerHTML= `Can't be mixed please try again`
   toast.className = "show";
   setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 4000); 
 }
+console.log(array);
 }
 var list = document.getElementsByClassName("amount-btn");
 for (var i = 0; i < list.length; i++) {
