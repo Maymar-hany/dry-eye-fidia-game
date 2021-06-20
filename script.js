@@ -13,14 +13,14 @@ var compined={
 var infictions = [
  { 
   'images/trium.png':'Eye-post',
-  'images/hyalfid-gel.png':'Long-screen' ,
-  'images/hyalfid.png':'Long-screen',
-  'images/tioretin.png':'Diabetic', 
-  'images/edenorm.png':'Post-surgery', 
+  'images/hyalfid-gel.png':'Multifactorial Dry Eye' ,
+  'images/hyalfid.png':'Multifactorial Dry Eye',
+  'images/tioretin.png':'Diabetes', 
+  'images/edenorm.png':'Corneal Edema', 
   'images/tearfid.png':'Evaporative Dry Eye', 
-  'images/iridium.png':'Dry-eye',
+  'images/iridium.png':'Severe Dry Eye',
   'images/ribolisin.png':'Uv-light',
-  'images/iridium-gel.png':'Red-eye',
+  'images/iridium-gel.png':'Dry Eye',
  }
  
 ]
@@ -125,7 +125,7 @@ var medicines=[
     id:'iridium',
     class:'iridium1',
     img:'images/iridium.png',
-    des:'images/iridium-des.jpg'
+    des:'images/iridium1-des.jpg'
   },
   {
     id:'ribolisin',
@@ -156,14 +156,14 @@ var patients =[
   },
   {
     attribute:'images/hyalfid.png',
-    id:'Long-screen',
+    id:'Multifactorial Dry Eye',
     infiction:'Patients with Multifactorial Dry eye e.g long screen time',
     img:'images/icon4.svg'
   },
   
   {
     attribute:'images/edenorm.png',
-    id:'Post-surgery',
+    id:'Corneal Edema',
     
     img:'images/icon7.svg'
   },
@@ -175,13 +175,13 @@ var patients =[
   },
   {
     attribute:'images/iridium.png',
-    id:'Dry-eye',
+    id:'Severe Dry Eye',
     infiction:'',
     img:'images/icon8.svg'
   },
   {
     attribute:'images/tioretin.png',
-    id:'Diabetic',
+    id:'Diabetes',
     infiction:'',
     img:'images/icon5.svg'
   },
@@ -193,7 +193,7 @@ var patients =[
   },
   {
     attribute:'images/iridium-gel.png',
-    id:'Red-eye',
+    id:'Dry Eye',
     infiction:'',
     img:'images/icon6.svg'
   },
@@ -275,6 +275,8 @@ function showProducts(){
       <div id="product-style"  class="swiper-slide">
       <div id="${element.class}" class="product-item  ">
   <img width="110px" class="medicImg1" src="${element.img}">
+  <div id="des-txt" class="img__description_layer">
+  <p class="img__description">Click For Description</p>
  </div>
  </div>
   `
@@ -362,7 +364,7 @@ interact('.item').draggable({
   
     modifiers: [
       interact.modifiers.restrictRect({
-        restriction: document.querySelector('#container'),
+        restriction: document.querySelector('.dropzone'),
         endOnly: true,
       })
     ],
@@ -784,7 +786,8 @@ var swiper = new Swiper(".mySwiper", {
 });
 function reset (){
   guide.style.display='block'
-
+   hint.style.display="none"
+   show.classList.add('d-none')
   var one =array[0]
        var two = array[1]
        var three = array[2]
