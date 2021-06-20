@@ -365,7 +365,7 @@ interact('.item').draggable({
   
     modifiers: [
       interact.modifiers.restrictRect({
-        restriction: document.querySelector('.dropzone'),
+        restriction: document.querySelector('#game'),
         endOnly: true,
       })
     ],
