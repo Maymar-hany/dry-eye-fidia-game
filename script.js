@@ -787,7 +787,8 @@ var swiper = new Swiper(".mySwiper", {
 function reset (){
   guide.style.display='block'
    hint.style.display="none"
-   show.classList.add('d-none')
+  
+   
   var one =array[0]
        var two = array[1]
        var three = array[2]
