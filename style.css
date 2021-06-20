@@ -685,4 +685,15 @@ p{
   min-width: 100%;
   min-height: 100%;
   z-index: 99999999999;
+}
+.play{
+  display: inline;
 } 
+#circle {
+  transition: stroke-dashoffset 300ms ease-in;
+  stroke-dashoffset: 0;
+  fill: none;
+}
+#circle.play {
+  stroke-dashoffset: 314;
+}
