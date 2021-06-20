@@ -423,13 +423,10 @@ interact('.item')
   .draggable({
     listeners: {
        move: dragMoveListener,
+   
       
-        end (event) {
-         
-        }
-      ,
-    }
-       
+    },
+    inertia: true,   
   })
   interact('.medicine-item')
   .draggable({
