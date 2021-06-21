@@ -812,41 +812,39 @@ function reset (){
   
   
   resetbtn.style.display="none"
-  dropped1.classList.remove('can-drop')
-  dropped1.classList.add('cannot-drop')
-  dropped1.classList.remove('drop-target')
-  dropped1.classList.remove('concentration-added')
-  dropped1.classList.remove('cant-drop','shake','dropped')
-dropped1.style.transform="none"
- dropped1.setAttribute('data-x', 0)
-dropped1.setAttribute('data-y',0)  
-if(dropped2!=null){
-dropped2.classList.remove('can-drop')
-dropped2.classList.add('cannot-drop')
-dropped2.classList.remove('drop-target')
-dropped2.classList.remove('concentration-added')
-dropped2.classList.remove('cant-drop','shake','dropped')
-dropped2.style.transform="none"
-dropped2.setAttribute('data-x', 0)
-dropped2.setAttribute('data-y',0)  
+  var droppedelement=''
+for (let index = 0; index < array.length; index++) {
+  var element = array[index];
+  if (element==='hyaluronic'+concentartion){
+    droppedelement = document.getElementById('hyaluronic')
+   }else{
+    droppedelement = document.getElementById(element)
+    
+   }
+  
+ droppedelement.classList.remove('can-drop')
+ droppedelement.classList.add('cannot-drop')
+ droppedelement.classList.remove('drop-target')
+ droppedelement.classList.remove('concentration-added')
+ droppedelement.classList.remove('cant-drop','shake','dropped')
+ droppedelement.style.transform="none"
+ droppedelement.setAttribute('data-x', 0)
+ droppedelement.setAttribute('data-y',0)  
 }
-if(dropped3!=null){
-dropped3.classList.remove('can-drop')
-dropped3.classList.add('cannot-drop')
-dropped3.classList.remove('drop-target')
-dropped3.classList.remove('concentration-added')
-dropped3.classList.remove('cant-drop','shake','dropped')
-dropped3.style.transform="none"
-dropped3.setAttribute('data-x', 0)
-dropped3.setAttribute('data-y',0)  
-}
-
+console.log(array);
 item2=''
 array=[]
 
 }
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+function filterIt(arr, searchKey) {
+  return arr.filter(obj => Object.keys(obj).some(key => obj[key].includes(searchKey)));
+}
 function addConcentration(){
-  array = item2.split("+");
+  var firstarray = item2.split("+");
+  array=firstarray.filter(onlyUnique)
   if(array.length<4){
 
   for (let index = 0; index < array.length; index++) {
@@ -858,14 +856,20 @@ function addConcentration(){
  var one =array[0]
  var two = array[1]
  var three = array[2]
+ 
+
+ 
  //var medicTarget = compined[`${item2}+${data}`] ?? compined[`${data}+${item2}`]
- var medicTarget = compined[`${one}+${two}+${three}`] ||compined[`${one}+${three}+${two}`]||
-  compined[`${two}+${one}+${three}`] ||
+ var medicTarget = compined[`${one}+${two}+${three}`] ||
+ compined[`${one}+${three}+${two}`]||
+ compined[`${two}+${one}+${three}`] ||
  compined[`${two}+${three}+${one}`] ||
  compined[`${three}+${two}+${one}`] ||
  compined[`${three}+${one}+${two}`] ||
- compined[`${one}+${two}`] || compined[`${two}+${one}`]
- 
+ compined[`${one}+${two}`] ||
+ compined[`${two}+${one}`]
+  
+
 if(medicTarget!==undefined ){
 
   medicines.forEach(element => {
@@ -972,8 +976,8 @@ if(medicTarget!==undefined ){
     }
 })
 
-}else if(medicTarget== undefined && array.length >1 ){
-  
+}else if(medicTarget== undefined && array.length > 1 ){
+
 toast.innerHTML= `Can't be compined please try again`
   toast.style.backgroundColor="rgba(201, 10, 10, 0.753)"
   toast.className = "show";

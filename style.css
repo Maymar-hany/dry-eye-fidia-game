@@ -55,10 +55,8 @@
     background-image: url('images/right.svg');
     background-position: top;
     background-repeat: no-repeat;
-    background-size: cover; 
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
+    background-size: 100% 100%; 
+   
      padding:  30px;
      padding-left: 80px;
      padding-bottom: 50px;
@@ -472,10 +470,7 @@ p{
   background-image: url('images/left.svg');
   background-position: top;
   background-repeat: no-repeat;
-  background-size: cover; 
-  -webkit-background-size: 100%;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-size: 100% 100%; 
   padding:  35px;
   padding-left: 80px;
   
