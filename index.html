@@ -18,226 +18,232 @@
         
       </head>
   <body>
-    <div  class="row no-gutters">
-      <audio id="intro" src="intro.mp3" type="audio/mp3"  mute="true"></audio> 
-      <div id="header" class="col-12" >
-        <img id="head" src="images/Eye-lab-logo.png">
-      
-        <div id="time">
-          
-          <p id="time-txt" class="text-center ">SCORE</p>
-          <img src="images/left-score.svg" class="img-height">
-          <label id="score-label"> <text id="score">0</text>/6</label>
-          <img src="images/right-score.svg"  class="img-height">
-      </div>
-      </div>
-    </div>
-    <div>
-      
-      <div id="game" class="row no-gutters content-site">
+
+<div id="wrapper">
+  <div  class="row no-gutters">
+    <audio id="intro" src="intro.mp3" type="audio/mp3"  mute="true"></audio> 
+    <div id="header" class="col-12" >
+      <img id="head" src="images/Eye-lab-logo.png">
     
-    <div class="col-md-3 col-sm-3 ">
-        <div id="patients" class="col-md-12 col-sm-12">
-          <div class="col-md-12 col-sm-12">
-            <h2 id="patient-txt" >INDICATIONS</h2>
-          </div>
-        </div>
-    </div>
- 
-    <div id="container" class="col-md-6 col-sm-6 " >
-    <div class="row no-gutters d-flex align-items-center justify-content-center">
-      <div class=" col-md-12 col-sm-12 dropzone">
-      <div id="error-div" class="row msg-div">
-      <div id="error-icon" class="col-md-2 col-sm-2 icon-msg" >
-        <img src="images/cancel.svg" class="img-fluid">
-      </div>
-      <div id="error-txt" class="col-md-8 col-sm-8 msg">
-        <p class="text-center message">Can't be compined please try again</p>
-      </div>
-     </div>
-     <div id="found-div" class="row msg-div">
-      <div id="found-icon" class="col-md-2 col-sm-2 icon-msg" >
-        <img src="images/information.svg" class="img-fluid">
-      </div>
-      <div id="found-txt" class="msg">
-        <p  class="text-center message">Product Is Already Found</p>
-       </div>
-     </div>
-   
-     <div id="notallowed-div" class="row msg-div">
-      <div id="notallowed-icon" class="col-md-2 col-sm-2 icon-msg" >
-        <img  src="images/cancel.svg" class="img-fluid">
-      </div>
-      <div id="notallowed-txt" class="msg">
-        <p  class="text-center message">No More Components Allowed</p>
-      </div>
-     </div> 
-       
+      <div id="time">
         
-        <div id="labzone">
- 
-              <div id="guide">
-                <img src="images/tap.svg">
-                <p class="guide-txt">Use your mouse to drag and drop 2-3 
-                  components to get your product</p>
-              </div> 
-            <div id="soundon" class="col-sm-1 col-md-1" onclick="turnSoundOff()">
-              <img src="images/SOUND ON.svg">
-            </div>
-            <div id="soundoff" class="col-sm-1 col-md-1 d-none" onclick="turnSoundOn()">
-              <img src="images/SOUND OFF.svg">
-            </div>
-              <button id="resetbtn" onclick="reset()"></button>
-              <div  class="container">
-               <div class="row d-flex align-items-center ">
-                <div id="medicine" class="col-md-3 col-sm-3">
-                    
-                </div>
-                <div id="hint" class="col-md-9 col-sm-9">
-                <img id="hintImg" src="images/hint.svg">
-                <p class="centered">Use your mouse to drag the 
-                  product to match with the 
-                  correct indication</p>
-                </div>
-               </div>
-              </div>
-                    
-                
-                </div> 
-            
-          </div>
+        <p id="time-txt" class="text-center ">SCORE</p>
+        <img src="images/left-score.svg" class="img-height">
+        <label id="score-label"> <text id="score">0</text>/6</label>
+        <img src="images/right-score.svg"  class="img-height">
+    </div>
+    </div>
+  </div>
+  <div>
     
-        <div id="product-tile" class="col-md-12 col-sm-12">
-           <div id="products-div" >
-            
-            <h3 id="product-txt">Correct Products </h3> 
-            
-              <div  class=" col-md-12 col-sm-12">
-                <div id="products" class="row">
+    <div id="game" class="row no-gutters content-site">
+  
+  <div class="col-md-3 col-sm-3 ">
+      <div id="patients" class="col-md-12 col-sm-12">
+        <div class="col-md-12 col-sm-12">
+          <h2 id="patient-txt" >INDICATIONS</h2>
+        </div>
+      </div>
+  </div>
 
-                </div>
+  <div id="container" class="col-md-6 col-sm-6 " >
+  <div class="row no-gutters d-flex align-items-center justify-content-center">
+    <div class=" col-md-12 col-sm-12 dropzone">
+    <div id="error-div" class="row msg-div">
+    <div id="error-icon" class="col-md-2 col-sm-2 icon-msg" >
+      <img src="images/cancel.svg" class="img-fluid">
+    </div>
+    <div id="error-txt" class="col-md-8 col-sm-8 msg">
+      <p class="text-center message">Can't be compined please try again</p>
+    </div>
+   </div>
+   <div id="found-div" class="row msg-div">
+    <div id="found-icon" class="col-md-2 col-sm-2 icon-msg" >
+      <img src="images/information.svg" class="img-fluid">
+    </div>
+    <div id="found-txt" class="msg">
+      <p  class="text-center message">Product Is Already Found</p>
+     </div>
+   </div>
+ 
+   <div id="notallowed-div" class="row msg-div">
+    <div id="notallowed-icon" class="col-md-2 col-sm-2 icon-msg" >
+      <img  src="images/cancel.svg" class="img-fluid">
+    </div>
+    <div id="notallowed-txt" class="msg">
+      <p  class="text-center message">No More Components Allowed</p>
+    </div>
+   </div> 
+     
+      
+      <div id="labzone">
+
+            <div id="guide">
+              <img src="images/tap.svg">
+              <p class="guide-txt">Use your mouse to drag and drop 2-3 
+                components to get your product</p>
+            </div> 
+          <div id="soundon" class="col-sm-1 col-md-1" onclick="turnSoundOff()">
+            <img src="images/SOUND ON.svg">
+          </div>
+          <div id="soundoff" class="col-sm-1 col-md-1 d-none" onclick="turnSoundOn()">
+            <img src="images/SOUND OFF.svg">
+          </div>
+            <button id="resetbtn" onclick="reset()"></button>
+            <div  class="container">
+             <div class="row d-flex align-items-center ">
+              <div id="medicine" class="col-md-3 col-sm-3">
+                  
               </div>
-      
-            <div >
-
+              <div id="hint" class="col-md-9 col-sm-9">
+              <img id="hintImg" src="images/hint.svg">
+              <p class="centered">Use your mouse to drag the 
+                product to match with the 
+                correct indication</p>
+              </div>
+             </div>
             </div>
-           </div>
-          </div>
+                  
+              
+              </div> 
+          
         </div>
-    </div>
-    <!-- <div id="logo"></div>
-     -->
-    <div  class=" col-md-3">
+  
+      <div id="product-tile" class="col-md-12 col-sm-12">
+         <div id="products-div" >
+          
+          <h3 id="product-txt">Correct Products </h3> 
+          
+            <div  class=" col-md-12 col-sm-12">
+              <div id="products" class="row">
 
-        <div id="compounds" class=" col-md-12 col-sm-12 ">
-          <div id="compoundszone" class="col-md-12 col-sm-12" >
-            <h2 id="comp-txt" >COMPONENTS</h2>
+              </div>
+            </div>
+    
+          <div >
+
           </div>
-         
+         </div>
         </div>
-      
-    </div>
+      </div>
+  </div>
+  <!-- <div id="logo"></div>
+   -->
+  <div  class=" col-md-3">
+
+      <div id="compounds" class=" col-md-12 col-sm-12 ">
+        <div id="compoundszone" class="col-md-12 col-sm-12" >
+          <h2 id="comp-txt" >COMPONENTS</h2>
+        </div>
+       
+      </div>
+    
   </div>
 </div>
+</div>
 
-  <div id="" class="modal">
-    <div class="modal-background ">
-      
-    </div>
-    <div id="wins" class="modal-content text-center">
-     
-        
-          <button class="modal-close is-large" aria-label="close" onclick="closefinalscore()"></button>
-          
-           
-          
-        
-    </div>
-  </div>
+<div id="" class="modal">
+  <div class="modal-background ">
     
-<!--   <div id="relieved-div" class="modal">
-    <div class="modal-background is-mobile">
+  </div>
+  <div id="wins" class="modal-content text-center">
+   
       
-    </div>
-    <div id="relieved" class="modal-content has-text-centered">
-      <div id="closeDiv" onclick="closeresult()">
-
-      </div>
+        <button class="modal-close is-large" aria-label="close" onclick="closefinalscore()"></button>
         
-          <p id="result-txt"> Result </p>
-           <p id="result-txt"  class=" title"> Relieved </p>
-             
-    </div>
-  </div>  --> 
+         
+        
+      
+  </div>
+</div>
   
- 
-   <!-- Button trigger modal -->
+<!--   <div id="relieved-div" class="modal">
+  <div class="modal-background is-mobile">
+    
+  </div>
+  <div id="relieved" class="modal-content has-text-centered">
+    <div id="closeDiv" onclick="closeresult()">
+
+    </div>
+      
+        <p id="result-txt"> Result </p>
+         <p id="result-txt"  class=" title"> Relieved </p>
+           
+  </div>
+</div>  --> 
+
+
+ <!-- Button trigger modal -->
 
 
 <!-- Modal -->
 <div class="modal fade" id="winner" tabindex="-1" >
-  <div class="modal-dialog  modal-dialog-centered text-center">
-    
-      <div class="modal-body">
-        <div class="modal-content">
-          <h1 id="result-txt"  class=" font-weight-bold">   Winner !</h1>
-          <p id="result-txt">Score: <label id="sc"></label> </p>
-          <button  class="amount-btn" onClick="window.location.href=window.location.href">Play Again</button>
-        </div>
+<div class="modal-dialog  modal-dialog-centered text-center">
+  
+    <div class="modal-body">
+      <div class="modal-content">
+        <h1 id="result-txt"  class=" font-weight-bold">   Winner !</h1>
+        <p id="result-txt">Score: <label id="sc"></label> </p>
+        <button  class="amount-btn" onClick="window.location.href=window.location.href">Play Again</button>
       </div>
-      
     </div>
+    
   </div>
+</div>
 <div class="modal fade" id="relieved" tabindex="-1" >
+<div class="modal-dialog  modal-dialog-centered text-center">
+  
+    <div class="modal-body">
+      <p id="result-txt"> Relieved </p>
+    </div>
+    
+  </div>
+</div>
+<div class="modal fade" id="suffer-div" tabindex="-1" >
   <div class="modal-dialog  modal-dialog-centered text-center">
     
       <div class="modal-body">
-        <p id="result-txt"> Relieved </p>
+        <p id="result-txt">Still Suffering! </p>
       </div>
       
     </div>
   </div>
-  <div class="modal fade" id="suffer-div" tabindex="-1" >
+  <div class="modal fade" id="description-div" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
     <div class="modal-dialog  modal-dialog-centered text-center">
       
-        <div class="modal-body">
-          <p id="result-txt">Still Suffering! </p>
+        <div class="modal-content">
+          <img  id="description" class="img-fluid" >
         </div>
         
       </div>
     </div>
-    <div class="modal fade" id="description-div" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-      <div class="modal-dialog  modal-dialog-centered text-center">
-        
-          <div class="modal-content">
-            <img  id="description" class="img-fluid" >
-          </div>
-          
-        </div>
-      </div>
-  <!-- Button trigger modal -->
+<!-- Button trigger modal -->
 
- 
-  </div>
 
-      </div>
-    
-    
-  <div id="foot " class="col-md-12 col-12">
-    <img src="images/Fidia-logo.svg" class="img-fluid">
-  </div>
-  <!-- <embed src='SoundURLHere' autostart='true' hidden='true' loop='false' name="jukebox"> -->
-<div id="startgame" class="srt">
+</div>
+
+    </div>
   
+  
+<div id="foot " class="col-md-12 col-12">
+  <img src="images/Fidia-logo.svg" class="img-fluid">
+</div>
+<!-- <embed src='SoundURLHere' autostart='true' hidden='true' loop='false' name="jukebox"> -->
+<div id="startgame" class="srt">
+
 <div id="strt" class="text-center"  onclick="startGame()">
 
 </div>
+
+</div>
  
-  </div>
-   
 </div>
 <div id="snackbar"></div>
+</div>
+<div id="warning-message">
+  this website is only viewable in landscape mode
+</div>
 </body>
 
 
