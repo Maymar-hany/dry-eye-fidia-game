@@ -12,29 +12,17 @@
    
   }
   #comp-txt{
-    margin-top: 10px;
     font-size: 2.3vw;
-    margin-left: 15px;
     color: #f49225;
     font-family:'firstjob-font';
   }
   #patient-txt{
-    margin-right: 15px;
     font-size: 2.3vw;
-    
+    padding-bottom: 4px;
     color: #f49225;
     font-family:'firstjob-font';
   }
-  #patient-text-white{
-    font-family: 'Roboto';
-    
-    color: #fff;
-    text-align: center;
-    position: absolute;
-    margin-left: 10px;
-    margin-top: 15px;
-    font-size: 1.3vw;
-  }
+ 
 
 #squares{
   display: none;
@@ -51,16 +39,7 @@
   font-size: 20px;
   margin-left: 5px;
 }
-  #compounds{
-    background-image: url('images/right.svg');
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 100% 100%; 
-   
-     padding:  30px;
-     padding-left: 80px;
-     padding-bottom: 50px;
-  }
+  
   
   #output-div{
     width: 368px;
@@ -138,6 +117,19 @@
   }
 
 @media (min-width: 481px) and (max-width: 1024px) {
+  #name{
+    font-family: 'Roboto';
+    color: #fff;
+    text-align: center;
+    font-size: 1.2vw;
+  }
+  #patient-text-white{
+    font-family: 'Roboto';
+    color: #fff;
+    display: contents;
+    text-align: center;
+    font-size: 1.2vw;
+  }
     .modal-background.srt{
         background-image: url('images/start-bg.jpg');
         background-position: top center;
@@ -159,6 +151,19 @@
   }  
 }
 @media (min-width: 1025px){
+  #name{
+    font-family: 'Roboto';
+    color: #fff;
+    text-align: center;
+    font-size: 1.2vw;
+  }
+  #patient-text-white{
+    font-family: 'Roboto';
+    color: #fff;
+    text-align: center;
+    font-size: 1.2vw;
+    display: contents;
+  }
 .srt{
     background-image: url('images/start-bg.jpg');
     background-position: top center;
@@ -180,6 +185,19 @@
 } 
 }
 @media (max-width: 480px){
+  #name{
+    font-family: 'Roboto';
+    color: #fff;
+    text-align: center;
+    font-size: 3vw;
+  }
+  #patient-text-white{
+    font-family: 'Roboto';
+    color: #fff;
+    text-align: center;
+    font-size: 3vw;
+    display: contents;
+  }
   #strt{
     position: absolute;
     bottom: 0px;
@@ -298,10 +316,11 @@ body {
 }
 #resetbtn{
   display: none;
-  float: right;
+  position: absolute;
   background: transparent;
   margin-right: 20px;
-  margin-top: 250px;
+  bottom: 25px;
+  right: 0;
   border: 0px;
   width: 100px;
   height: 40px;
@@ -318,7 +337,7 @@ body {
 
     margin-bottom: 15px;
     padding: 5px;
-   margin-left: 25px;
+
 
 }
 
@@ -366,6 +385,20 @@ body {
     color:#55dc47;
     
 }
+.icon-msg{
+
+  left: 57px;
+  top: 5px;
+}
+#error-div , #found-div , #warn-div , #notallowed-div {
+  display: none;
+  margin-top: 50px;
+}
+.message{
+  font-family:'Roboto';
+    font-size: 14px;
+    padding-top: 10px;
+}
 #header{
   display: block;
 }
@@ -387,21 +420,15 @@ top:0;
 .item {
     touch-action: none;
     user-select: none;
-    border-radius: 10px;
-    background-color: #00446693;
-    margin: 0px auto;
-    position:relative;
-    text-align: center;
-    justify-content: center;
+  
 }
-#name{
-  margin: 0px auto;
- position:absolute;
- bottom:2px;
- width: 100%;
- font-size: 1vw;
-text-align: center;
-font-family: "Roboto";
+.item-style {
+  touch-action: none;
+  user-select: none;
+  padding: 0px;
+  background-color: #00446693;
+  border-radius: 70px;
+  position: relative;
 }
 #score-label{
   position: absolute;
@@ -412,21 +439,18 @@ font-family: "Roboto";
   
   padding-top: 30px;
 }
+#soundon , #soundoff{
+  bottom: 15px;
+  position: absolute;
+  cursor: pointer;
+}
 .guide-txt{
-  padding: 20px;
+  padding: 3%;
   text-align: center;
   color: rgba(255, 255, 255, 0.945);
   font-size: 17px;
 }
- .item.can-drop{
-    background-color: rgba(29, 109, 161, 0.822);
-    
-    border-color: #fff;
-    border-style: solid;
-}
-.item.cant-drop{
-    background-color: rgba(201, 10, 10, 0.753);
-}
+ 
 
 p{
     font-family: "Century Gothic";
@@ -466,27 +490,19 @@ p{
     
     margin: 20px;
 }
-#patients{
-  background-image: url('images/left.svg');
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: 100% 100%; 
-  padding:  35px;
-  padding-left: 80px;
-  
-}
+
 
 #patient-style{
-    padding: 0px;
-    background-color: #00446693;
-    border-radius: 70px;
-    
-    margin-bottom: 10px;
-    position: relative;
+  padding: 0px;
+  background-color: #00446693;
+  border-radius: 70px;
+  
+  margin-bottom: 10px;
+  position: relative;
 }
 
 #item-style{
-    padding: 7px;
+    padding: 6px;
    
     
 }
@@ -607,12 +623,12 @@ p{
   .centered {
     position: absolute;
     font-size: 1vw;
-    top: 10%;
+    top: 20%;
     left: 30%;
     
   }
   #hintImg{
-    width: 105%;
+    width: 100%;
   }
   #hint {
     position: relative;
@@ -694,4 +710,98 @@ p{
 }
 #circle.play {
   stroke-dashoffset: 314;
+}
+
+
+#found-txt {
+  
+  position: relative;
+  width: 250px;
+  height: 35px;
+  background: #5FB6EA;
+  border-radius: 10px;
+
+}
+
+#found-txt::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-right-color: #5FB6EA;;
+  border-left: 0;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+#error-txt {
+
+  position: relative;
+  width: 250px;
+  height: 35px;
+  background: #FF7472;
+  border-radius: 10px;
+
+}
+
+#error-txt::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-right-color: #FF7472;
+  border-left: 0;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+#notallowed-txt {
+
+  position: relative;
+  width: 250px;
+  height: 35px;
+  background: #FF7472;
+  border-radius: 10px;
+
+}
+
+#notallowed-txt::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-right-color: #FF7472;
+  border-left: 0;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+#warn-txt {
+
+  position: relative;
+  width: 250px;
+  height: 35px;
+  background: #FED764;
+  border-radius: 10px;
+
+}
+
+#warn-txt::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-right-color: #FED764;
+  border-left: 0;
+  margin-top: -8px;
+  margin-left: -8px;
 }

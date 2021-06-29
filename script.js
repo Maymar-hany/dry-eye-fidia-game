@@ -2,13 +2,10 @@
 var compined={
   'amino+hyaluronic0.15%':'images/hyalfid.png',
   'amino+hyaluronic0.3%':'images/hyalfid-gel.png',
-  'amino+hyaluronic0.15%+riboflavin':'images/ribolisin.png',
-  'amino+hyaluronic0.15%+echinacea':'images/iridium.png',
+  'hyaluronic0.15%+riboflavin':'images/ribolisin.png',
+  'hyaluronic0.15%+echinacea':'images/iridium.png',
   'ginkgo+hyaluronic0.15%':'images/trium.png',
-  'nacl+hyaluronic0.05%':'images/edenorm.png',
-  'amino+liposome':'images/tearfid.png',
-  'carbopol+echinacea+aloevera':'images/iridium-gel.png',
-  'amino+lipoic+hypromelose':'images/tioretin.png'
+  'lipoic+hypromelose':'images/tioretin.png'
 }
 var infictions = [
  { 
@@ -16,11 +13,8 @@ var infictions = [
   'images/hyalfid-gel.png':'Multifactorial Dry Eye' ,
   'images/hyalfid.png':'Multifactorial Dry Eye',
   'images/tioretin.png':'Diabetes', 
-  'images/edenorm.png':'Corneal Edema', 
-  'images/tearfid.png':'Evaporative Dry Eye', 
   'images/iridium.png':'Severe Dry Eye',
-  'images/ribolisin.png':'Uv-light',
-  'images/iridium-gel.png':'Dry Eye',
+  'images/ribolisin.png':'Uv Light',
  }
  
 ]
@@ -36,15 +30,14 @@ var compounds = [
     img:'images/Ginkgo.svg'
   },
   {
-    id:'hyaluronic',
-    name:'Hyaluronic Acid',
+    id:'hyaluronic0.15%',
+    name:'Hyaluronic Acid 0.15%',
     img:'images/Hyaluronic Acid.svg'
   },
- 
   {
-    id:'carbopol',
-    name:'Carbopol',
-    img:'images/carbopol.svg'
+    id:'hyaluronic0.3%',
+    name:'Hyaluronic Acid 0.3%',
+    img:'images/Hyaluronic Acid.svg'
   },
   {
     id:'echinacea',
@@ -54,32 +47,17 @@ var compounds = [
   {
     id:'hypromelose',
     name:'Hypromelose',
-    img:'images/Hypromellose.psd.png'
+    img:'images/Hypromellose.psd.svg'
   }
   ,
-   {
-    id:'aloevera',
-    name:'Aloe Vera',
-    img:'images/aloevera.svg'
-  }
-  ,
+
   {
     id:'lipoic',
     name:'Lipoic',
     img:'images/lipoic.svg'
   },
-  {
-    id:'liposome',
-    name:'Liposome',
-    img:'images/liposome.png'
-  }
-  ,
-  {
-    id:'nacl',
-    name:'NaCL',
-    img:'images/nacl.svg'
-  } 
-  ,
+
+
   {
     id:'riboflavin',
     name:'Riboflavin',
@@ -107,19 +85,7 @@ var medicines=[
     img:'images/trium.png',
     des:'images/Trium-des.jpg'
   },
-  {
-    id:'edenorm',
-    class:'edenorm1',
-    img:'images/edenorm.png',
-    des:'images/edenorm-des.jpg'
 
-  },
-  {
-    id:'tearfid',
-    class:'tearfid1',
-    img:'images/tearfid.png',
-    des:'images/tearfid-des.jpg'
-  },
 
   {
     id:'iridium',
@@ -139,66 +105,46 @@ var medicines=[
     img:'images/tioretin.png',
     des:'images/tiorten-des.jpg'
   },
-  {
-    id:'iridium-gel',
-    class:'iridium-gel1',
-    des:'images/iridium-des.jpg',
-    img:'images/iridium-gel.png'
-  },
-  
+ 
 ]
 var patients =[
   {
     attribute:'images/trium.png',
-    id:'Surgery & Trauma',
+    id:'Post Surgery Dry eye',
     infiction:'Patients with dry eye post eye surgery',
     img:'images/icon1.svg'
   },
   {
     attribute:'images/hyalfid.png',
-    id:'Multifactorial Dry Eye',
+    id:'Moderate dry eye',
     infiction:'Patients with Multifactorial Dry eye e.g long screen time',
     img:'images/icon4.svg'
   },
-  
   {
-    attribute:'images/edenorm.png',
-    id:'Corneal Edema',
-    
-    img:'images/icon7.svg'
-  },
-  {
-    attribute:'images/tearfid.png',
-    id:'Evaporative Dry Eye',
-    infiction:'',
+    attribute:'images/hyalfid-gel.png',
+    id:'Severe Dry eye',
+    infiction:'Patients with Multifactorial Dry eye e.g long screen time',
     img:'images/icon2.svg'
   },
   {
     attribute:'images/iridium.png',
-    id:'Severe Dry Eye',
+    id:'Dry eye due to Iatrogenic alterations',
     infiction:'',
     img:'images/icon8.svg'
   },
   {
     attribute:'images/tioretin.png',
-    id:'Diabetes',
+    id:'Diabetic Dry Eye',
     infiction:'',
     img:'images/icon5.svg'
   },
   {
     attribute:'images/ribolisin.png',
-    id:'Uv-light',
+    id:'Dry eye due to photo-oxidative stress',
     infiction:'',
     img:'images/icon3.svg'
   },
-  {
-    attribute:'images/iridium-gel.png',
-    id:'Dry Eye',
-    infiction:'',
-    img:'images/icon6.svg'
-  },
-  
- 
+
 ]
 var array =[]
 var count = 0;
@@ -271,42 +217,22 @@ var cunt=0
 function showProducts(){
   medicines.forEach(element => {
     cunt++
-    if(element.id==='iridium-gel'){
+ 
       med = ` 
-      <div id="product-style"  class="swiper-slide">
-      <div id="${element.class}" class="product-item   "   onclick = "openDescription(this.id)">
-  <img width="110px" class="medicImg1" src="${element.img}">
-  <div id="des-txt" class="img__description_layer">
-  <p class="img__description">Click For Description</p>
- </div>
- </div>
-  `
-    }else{
-      med = ` 
-     <div id="product-style"  class="swiper-slide">
-      <div id="${element.class}" class="single-product   product-item " onclick = "openDescription(this.id)">
+     <div id="product-style"  class="col-md-2">
+      <div id="${element.class}" class="single-product  product-item " onclick = "openDescription(this.id)">
     
-  <img    class="medicImg1" src="${element.img}">
+  <img    class=" img-fluid medicImg1" src="${element.img}">
   <div id="des-txt" class="img__description_layer">
   <p class="img__description">Click For Description</p>
 </div> 
   </div>      
   </div>
   `
-    }
+ 
  
   products.innerHTML +=med
-/*   var moreInfo =document.getElementById(element.class)
-  
-  var span = document.getElementById(cunt)
-  console.log(span);
-moreInfo.addEventListener("mouseover", event => {
-  span.style.display='inline-block'
-  
-});
-moreInfo.addEventListener("mouseout", event => {
-  span.style.display='none'
-}); */
+
 }); 
 }
 function addCompounds (){
@@ -317,16 +243,15 @@ function addCompounds (){
   
     compound=
     `
-    <div id="item-style" class="col-md-5  col-5"> 
-    <div id="${element.id}" class="item">
-   <img width="75%" height="75%"  src="${element.img}" >
-  <p id="name" > ${element.name}</p>
+    <div id="item-style" class="col-md-12  col-8"> 
+    <div  class="item-style" >
+   <img id="${element.id}" width="25%" height="25%" class="item" src="${element.img}" >
+   <span id="name" > ${element.name}</span>
    </div>
    </div>
         `
         compoundsdiv.innerHTML+= compound
     // compound.classList.add('item')
-     
     // compound.classList.add('is-2')
     // compound.id=element.id
   //compoundsdiv.insertBefore (compound , lab)
@@ -335,11 +260,15 @@ function addCompounds (){
 function addPatients (){
   patients.forEach(element => {
     var patient = `
-    <div id="patient-style" class="col-md-9 col-8">
-    <div id="patient-icon">
-    <div  id="${element.id}" class="dropzone-patient" data-medic="${element.attribute}">
-    <img width="22%" height="22%"  src="${element.img}" >
+    <div id="patient-style" class="col-md-12 col-8">
+    <div id="patient-icon" class="">
+    <div  id="${element.id}" class="dropzone-patient row" data-medic="${element.attribute}">
+    <div class="col-4">
+    <img width="100%" height="100%"  src="${element.img}" >
+    </div>
+    <div class="col-8 d-flex align-items-center pl-0">
     <span id="patient-text-white"> ${element.id}</span>
+    </div>
      </div>   
     </div
     </div>
@@ -407,15 +336,12 @@ interact('.item').draggable({
       
     },
       onend: function (event) {
-        var position = {x:event.target.getAttribute('data-start-x'),y:event.target.getAttribute('data-start-y')}
-     
-          // snap to the start position
-          
-          event.interactable.draggable({
-              snap: {
-                  targets: [position]
-              }
-          });
+        if(!event.target.className.includes('dropped')){
+          event.target.style.transform="none"
+          event.target.setAttribute('data-x', 0)
+          event.target.setAttribute('data-y',0) 
+        }
+       
       
   }
 })
@@ -451,20 +377,7 @@ interact('.item')
       item.classList.add('dragging')
       event.target.id="components"
       activated=item.id
-     
-      if(item.id==='hyaluronic'&& !item.className.includes('concentration-added')){
-    /*     let closeAmount = () => { //MODAL HIDE
-          amount.style.display = 'none';
-          amount.style.opacity = 0;
-      };
-         amount.style.display = "block";
-        amount.style.paddingRight = "17px";
-        amount.style.backgroundColor = 'rgba(0,0,0,0.5)'
-        amount.className="modal fade show";  */
-        $('#amount-div').modal('show')
-        //item.classList.remove('item')
-        item.classList.add('concentration-added')
-       }
+    
    
     },
     ondropdeactivate: function (event) {
@@ -485,29 +398,32 @@ interact('.item')
       item.classList.remove('can-drop')
       item.classList.add('cannot-drop')
       item.classList.remove('drop-target')
-      item.classList.remove('concentration-added')
       item.classList.remove('cant-drop','shake','dropped')
-      var one =array[0]
-      var two = array[1]
-      var three = array[2]
-        if (one==='hyaluronic'+concentartion){
-               dropped1 = document.getElementById('hyaluronic')
-              }else{
-               dropped1 = document.getElementById(one)
-              }
-              if (two==='hyaluronic'+concentartion){
-               dropped2 = document.getElementById('hyaluronic')
-              }else{
-               dropped2 = document.getElementById(two)
-               
-              }
-              if (three==='hyaluronic'+concentartion){
-               dropped3 = document.getElementById('hyaluronic')
-              }else{
-               dropped3 = document.getElementById(three)
-              }
+      
+      var elems = document.getElementsByClassName('msg-div')
+      for(var i=0; i<elems.length; i++) {
+       elems[i].style.display='none'
+      }
+     
+       
       resetbtn.style.display="none"
-          
+      guide.style.display='inline-block'
+      
+      var droppedelement=''
+      for (let index = 0; index < array.length; index++) {
+        var element = array[index];
+        
+      }
+      if(droppedelement !=''){
+      droppedelement = document.getElementById(element)
+      droppedelement.classList.remove('can-drop')
+      droppedelement.classList.add('cannot-drop')
+      droppedelement.classList.remove('drop-target')
+      droppedelement.classList.remove('cant-drop','shake','dropped')
+      droppedelement.style.transform="none"
+      droppedelement.setAttribute('data-x', 0)
+      droppedelement.setAttribute('data-y',0) 
+    }
       if(count!=0){
         count-=1
       }
@@ -539,15 +455,7 @@ interact('.item')
         item.setAttribute('data-y', y) */
       guide.style.display='none'
       //squares.style.display="inline-flex"
-      if(count > 3 && !item.className.includes('dropped')){
-        item.classList.add('shake')
-        
-        item.classList.add('cant-drop')
-        toast.innerHTML= 'No more elements allowed!'
-        toast.style.backgroundColor="rgba(201, 10, 10, 0.753)"
-        toast.className = "show";
-        setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 4000); 
-      }
+    
       
      
       if (item2===''){
@@ -565,7 +473,7 @@ interact('.item')
        medicdiv = document.createElement('div')
        count++
        addConcentration();
-       resetbtn.style.display="inline"
+       resetbtn.style.display="block"
        var rect = document.getElementById('components').getBoundingClientRect();
       
   },
@@ -713,8 +621,8 @@ function startGame() {
   var start = document.getElementById("startgame")
   start.classList.add('d-none')
   document.body.style.overflowY = "scroll";
-  $('#intro').get(0).play()
-  $('#intro').get(0).volume="0.05"
+ intro.play()
+  intro.volume="0.05"
   
 
 }
@@ -746,11 +654,7 @@ var descripTxt = document.getElementById('des-txt')
 function closedescription(){
   descrip.classList.remove('is-active')
 }
-function concentrate(id) {
- 
-  concentartion =id
-  $('#amount-div').modal('hide')
-}
+
 window.onclick = function(event) {
   
   if(show !=''){
@@ -765,67 +669,38 @@ window.onclick = function(event) {
 }
 
 var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
+  slidesPerView: 6,
   spaceBetween: 10,
-  slidesPerGroup: 3,
+  slidesPerGroup: 6,
   loop: true,
   loopFillGroupWithBlank: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+ 
   observer: true,  
        observeParents: true,
 });
 function reset (){
-  guide.style.display='block'
+  guide.style.display='inline-block'
    hint.style.display="none"
+   var elems = document.getElementsByClassName('msg-div')
+   for(var i=0; i<elems.length; i++) {
+    elems[i].style.display='none'
+   }
   
+ 
    if(show !== ''){
     show.classList.add('d-none')
    }
-   
-  var one =array[0]
-       var two = array[1]
-       var three = array[2]
-      
-         if (one==='hyaluronic'+concentartion){
-                dropped1 = document.getElementById('hyaluronic')
-               }else{
-                dropped1 = document.getElementById(one)
-               }
-               if (two==='hyaluronic'+concentartion){
-                dropped2 = document.getElementById('hyaluronic')
-               }else{
-                dropped2 = document.getElementById(two)
-                
-               }
-               if (three==='hyaluronic'+concentartion){
-                dropped3 = document.getElementById('hyaluronic')
-               }else{
-                dropped3 = document.getElementById(three)
-               }
-  
-  
+
   resetbtn.style.display="none"
   var droppedelement=''
 for (let index = 0; index < array.length; index++) {
   var element = array[index];
-  if (element==='hyaluronic'+concentartion){
-    droppedelement = document.getElementById('hyaluronic')
-   }else{
+ 
     droppedelement = document.getElementById(element)
-    
-   }
-  
+
  droppedelement.classList.remove('can-drop')
  droppedelement.classList.add('cannot-drop')
  droppedelement.classList.remove('drop-target')
- droppedelement.classList.remove('concentration-added')
  droppedelement.classList.remove('cant-drop','shake','dropped')
  droppedelement.style.transform="none"
  droppedelement.setAttribute('data-x', 0)
@@ -845,27 +720,12 @@ function filterIt(arr, searchKey) {
 function addConcentration(){
   var firstarray = item2.split("+");
   array=firstarray.filter(onlyUnique)
-  if(array.length<4){
-
-  for (let index = 0; index < array.length; index++) {
-    if(array[index]==='hyaluronic') {
-     array[index]='hyaluronic'+concentartion
-      
-    }}
+  if(array.length<3){
 
  var one =array[0]
  var two = array[1]
- var three = array[2]
- 
 
- 
- //var medicTarget = compined[`${item2}+${data}`] ?? compined[`${data}+${item2}`]
- var medicTarget = compined[`${one}+${two}+${three}`] ||
- compined[`${one}+${three}+${two}`]||
- compined[`${two}+${one}+${three}`] ||
- compined[`${two}+${three}+${one}`] ||
- compined[`${three}+${two}+${one}`] ||
- compined[`${three}+${one}+${two}`] ||
+ var medicTarget =
  compined[`${one}+${two}`] ||
  compined[`${two}+${one}`]
   
@@ -876,7 +736,6 @@ if(medicTarget!==undefined ){
     if(element.img === medicTarget){
       
       show = document.getElementById(element.id)
-     
       var em = document.getElementById(show.id+'1').querySelector('.medicImg1')
       var  elementOpacity = window.getComputedStyle(em).getPropertyValue("opacity");
       if(elementOpacity!=1){
@@ -898,22 +757,11 @@ if(medicTarget!==undefined ){
           output.style.width = '168px'; 
           output.src=medicTarget
         } */
-        if (one==='hyaluronic'+concentartion){
-          dropped1 = document.getElementById('hyaluronic')
-         }else{
+     
           dropped1 = document.getElementById(one)
-         }
-         if (two==='hyaluronic'+concentartion){
-          dropped2 = document.getElementById('hyaluronic')
-         }else{
+      
           dropped2 = document.getElementById(two)
-          
-         }
-         if (three==='hyaluronic'+concentartion){
-          dropped3 = document.getElementById('hyaluronic')
-         }else{
-          dropped3 = document.getElementById(three)
-         }
+       
       
          
           dropped1.classList.add('animate__animated','animate__rollOut','animate__slow')
@@ -921,7 +769,6 @@ if(medicTarget!==undefined ){
           setTimeout(function(){
             dropped1.classList.remove('animate__animated','animate__rollOut','animate__slow')
             dropped1.classList.remove('can-drop')
-            dropped1.classList.remove('concentration-added')
             dropped1.classList.add('cannot-drop')
             dropped1.classList.remove('drop-target')
            // dropped1.classList.remove('concentration-added')
@@ -930,64 +777,72 @@ if(medicTarget!==undefined ){
           dropped2.classList.remove('animate__animated','animate__rollOut','animate__slow')
           dropped2.classList.remove('can-drop')
          dropped2.classList.add('cannot-drop')
-         dropped2.classList.remove('concentration-added')
          dropped2.classList.remove('drop-target')
          //dropped2.classList.remove('concentration-added')
          dropped2.classList.remove('cant-drop','shake','dropped')
        dropped2.style.transform="none"
         },2000)
        
-          if(dropped3!==null){
-            dropped3.classList.add('animate__animated','animate__rollOut','animate__slow')
-          setTimeout(function(){
-            
-            dropped3.classList.remove('can-drop')
-            dropped3.classList.add('cannot-drop')
-            dropped3.classList.remove('drop-target')
-            dropped3.classList.remove('concentration-added')
-            dropped3.classList.remove('cant-drop','shake','dropped')
-          dropped3.style.transform="none"
-          dropped3.classList.remove('animate__animated','animate__rollOut','animate__slow')
-            //dropped3.classList.add('is-hidden')
-        },2000)
-          
-        }
+       
         setTimeout(function(){
           resetbtn.style.display="none"
       hint.style.display='block'
+      var elems = document.getElementsByClassName('msg-div')
+      for(var i=0; i<elems.length; i++) {
+       elems[i].style.display='none'
+      }
+     
           show.classList.remove('d-none')
           
           item2=''
           array=[]
           audio.play();
-      },1000)
+      },1500)
        
       
-      
+   
   
 }
 
-}else{
-  toast.innerHTML= `Already Found`
-  toast.style.backgroundColor="rgba(201, 10, 10, 0.753)"
-  toast.className = "show";
-  setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 4000); 
+}
+else{
+  document.getElementById('found-div').style.display='flex'
 }
     }
 })
-
 }else if(medicTarget== undefined && array.length > 1 ){
-
-toast.innerHTML= `Can't be compined please try again`
-  toast.style.backgroundColor="rgba(201, 10, 10, 0.753)"
-  toast.className = "show";
-  setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 4000); 
+  document.getElementById('error-div').style.display='flex'
+  
 }
 }else{
-  toast.innerHTML= `No More Components allowed`
-  toast.style.backgroundColor="rgba(201, 10, 10, 0.753)"
-  toast.className = "show";
-  setTimeout(function(){ toast.className = toast.className.replace("show", "");}, 4000); 
+  interact('.item').draggable(
+    {
+      modifiers: [
+        interact.modifiers.restrictRect({
+          restriction: document.querySelector('#compounds'),
+          endOnly: true,
+        })
+      ]
+    }
+  )
+  document.getElementById('notallowed-div').style.display='flex'
+  var droppedelement=''
+  for (let index = 0; index < array.length; index++) {
+    var element = array[index];
+  
+      droppedelement = document.getElementById(element)
+      
+     
+}
+document.getElementById('error-div').style.display='none'
+droppedelement.classList.remove('can-drop')
+droppedelement.classList.add('cannot-drop')
+droppedelement.classList.remove('drop-target')
+droppedelement.classList.remove('concentration-added')
+droppedelement.classList.remove('cant-drop','shake','dropped')
+droppedelement.style.transform="none"
+droppedelement.setAttribute('data-x', 0)
+droppedelement.setAttribute('data-y',0) 
 }
 console.log(array);
 }
@@ -998,24 +853,17 @@ for (var i = 0; i < list.length; i++) {
    )
    
 }
-
-$(document).ready(function() {
-  var state = "paused";
-
-  
-  $('#pause').on('click', function() {
-    if(state == 'paused') {
-      $('#intro').get(0).pause()
-      state = "playing";
-      $("#circle").attr("class", "play");
-      $("#from_pause_to_play")[0].beginElement();
-    } else {
-      state = "paused";
-      
-      $('#intro').get(0).play()
-      $('#intro').get(0).volume="0.05"
-      $("#circle").attr("class", "");
-      $("#from_play_to_pause")[0].beginElement();
-    }
-  });
-});
+function turnSoundOff(){
+ var off= document.getElementById('soundoff')
+  off.classList.remove('d-none')
+  var on= document.getElementById('soundon')
+  on.classList.add('d-none')
+ intro.pause()
+}
+function turnSoundOn(){
+  var off= document.getElementById('soundoff')
+   off.classList.add('d-none')
+   var on= document.getElementById('soundon')
+   on.classList.remove('d-none')
+  intro.play()
+ }
