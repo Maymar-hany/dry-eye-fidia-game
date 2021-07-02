@@ -47,7 +47,7 @@ var compounds = [
   {
     id:'hypromelose',
     name:'Hypromelose',
-    img:'images/Hypromellose.psd.svg'
+    img:'images/Hypromellose.png'
   }
   ,
 
@@ -245,7 +245,7 @@ function addCompounds (){
     `
     <div id="item-style" class="col-md-12  col-8"> 
     <div  class="item-style" >
-   <img id="${element.id}" width="25%" height="25%" class="item" src="${element.img}" >
+   <img id="${element.id}" width="22%" height="22%" class="item" src="${element.img}" >
    <span id="name" > ${element.name}</span>
    </div>
    </div>
@@ -512,9 +512,7 @@ interact('.item')
          // i.style.display='flex' 
           item.classList.remove('dragging')
           }
-          else if(attr==='images/hyalfid.png' && currentmedic ==='images/hyalfid-gel.png'){
-            item.classList.remove('dragging')
-          }
+         
           
            
     },

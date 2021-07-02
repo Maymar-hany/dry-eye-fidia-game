@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 325.2 90.5" style="enable-background:new 0 0 325.2 90.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#Path_1_1_);}
+	.st1{fill:url(#Path_2_1_);}
+</style>
+<g id="button" transform="translate(-797 -856)">
+	<g id="Group_1" transform="translate(596.58 585.566)">
+		
+			<linearGradient id="Path_1_1_" gradientUnits="userSpaceOnUse" x1="59.3417" y1="707.3166" x2="59.3717" y2="706.0546" gradientTransform="matrix(325.154 0 0 -90.503 -18937.0703 64397.8594)">
+			<stop  offset="0" style="stop-color:#27AAF2"/>
+			<stop  offset="1" style="stop-color:#1B75B2"/>
+		</linearGradient>
+		<path id="Path_1" class="st0" d="M221.1,485.8c-11.8-1.5-20.7-11.5-20.7-23.4V419c0-13,10.6-23.6,23.6-23.6c0,0,0,0,0,0h278
+			c1,0,1.9,0.1,2.9,0.2c11.8,1.5,20.7,11.5,20.7,23.4v43.3c0,13-10.6,23.6-23.6,23.6l0,0H224C223,485.9,222.1,485.9,221.1,485.8
+			L221.1,485.8z"/>
+		
+			<linearGradient id="Path_2_1_" gradientUnits="userSpaceOnUse" x1="59.3854" y1="705.3398" x2="59.3574" y2="706.6358" gradientTransform="matrix(314.543 0 0 -79.883 -18311.8711 56837.1289)">
+			<stop  offset="0" style="stop-color:#27AAF2"/>
+			<stop  offset="1" style="stop-color:#1B75B2"/>
+		</linearGradient>
+		<path id="Path_2" class="st1" d="M224,480.6c-0.7,0-1.5,0-2.2-0.1l-0.1,0c-9.2-1.1-16-8.9-16-18.1V419c0-10.1,8.2-18.3,18.3-18.3
+			h278c0.8,0,1.5,0,2.2,0.1c9.2,1.1,16,8.9,16,18.2v43.3c0,10.1-8.2,18.3-18.3,18.3L224,480.6L224,480.6z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 882.9995 1044)" style="fill:#FFFFFF; font-family:'Roboto-Bold'; font-size:47px;">START</text>
+</g>
+</svg>

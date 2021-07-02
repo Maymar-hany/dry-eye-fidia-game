@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="325.16" height="90.5" viewBox="0 0 325.16 90.5">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.485" y1="-0.131" x2="0.515" y2="1.131" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#27aaf2"/>
+      <stop offset="1" stop-color="#1b75b2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.514" y1="1.148" x2="0.486" y2="-0.148" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="button" transform="translate(-797 -856)">
+    <g id="Group_1" data-name="Group 1" transform="translate(596.58 585.566)">
+      <path id="Path_1" data-name="Path 1" d="M221.123,360.757a23.6,23.6,0,0,1-20.7-23.419V294.029a23.6,23.6,0,0,1,23.6-23.6H501.984a23.8,23.8,0,0,1,2.893.176,23.6,23.6,0,0,1,20.7,23.419v43.308a23.6,23.6,0,0,1-23.6,23.6H224.016a23.815,23.815,0,0,1-2.892-.176Z" fill="url(#linear-gradient)"/>
+      <path id="Path_2" data-name="Path 2" d="M270.458,402.067a18.492,18.492,0,0,1-2.173-.128l-.074-.009a18.292,18.292,0,0,1-16.041-18.15V340.471a18.287,18.287,0,0,1,18.286-18.287h277.97a18.445,18.445,0,0,1,2.246.137,18.292,18.292,0,0,1,16.041,18.151v43.308a18.288,18.288,0,0,1-18.288,18.287H270.458Z" transform="translate(-46.442 -46.442)" fill="url(#linear-gradient-2)"/>
+    </g>
+    <text id="START" transform="translate(883 870)" fill="#fff" font-size="47" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="49">START</tspan></text>
+  </g>
+</svg>

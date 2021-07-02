@@ -1,5 +1,14 @@
 
-
+body {
+  background-image: url('images/background.png');
+  
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+   min-height: 100%;
+}
 #start {
     height: 100%;
     width: 100%;
@@ -115,7 +124,17 @@
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
+  #strt{
+    margin-top: 200%;
+    cursor: pointer;
 
+  }
+  .srt {
+    background-image: url(images/background-start.jpg);
+    background-size: cover;
+    background-position: bottom;
+    display: block;
+}
 @media (min-width: 481px) and (max-width: 1024px) {
   #name{
     font-family: 'Roboto';
@@ -130,25 +149,7 @@
     text-align: center;
     font-size: 1.2vw;
   }
-    .modal-background.srt{
-        background-image: url('images/start-bg.jpg');
-        background-position: top center;
-        background-repeat: no-repeat;
-        background-size: cover; 
-        -webkit-background-size: 100%;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-         min-height: 100%;
-        
-    } 
-    #strt{
-      margin-left: 450px;
-      position: absolute;
-       bottom: 0px;
-      cursor: pointer;
-      width: 350px;
-      height: 200px;
-  }  
+    
 }
 @media (min-width: 1025px){
   #name{
@@ -164,25 +165,7 @@
     font-size: 1.2vw;
     display: contents;
   }
-.srt{
-    background-image: url('images/start-bg.jpg');
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    -webkit-background-size: 100%;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-     min-height: 100%;
-    
-}
-#strt{
-  margin-left: 450px;
-  position: absolute;
-   bottom: 0px;
-  cursor: pointer;
-  width: 300px;
-  height: 200px;
-} 
+ 
 }
 @media (max-width: 480px){
   #name{
@@ -198,42 +181,9 @@
     font-size: 3vw;
     display: contents;
   }
-  #strt{
-    position: absolute;
-    bottom: 0px;
-   cursor: pointer;
-   width: 300px;
-   height: 200px;
-  }
-  .srt{
-      background-image: url('images/start-bg-mb.jpg');
-      background-position: top center;
-      background-repeat: no-repeat;
-      background-size: cover; 
-      -webkit-background-size: 100%;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-       min-height: 100%;
-      
-  }
-  }
-
-
-
-   
   
-    
-
-body {
-    background-image: url('images/background.svg');
-    
-    background-repeat: no-repeat;
-    background-size: cover; 
-    
-    -moz-background-size: cover;
-    -o-background-size: cover;
-     min-height: 100%;
   }
+
 #labs{
     width: 100%;
 }
@@ -556,7 +506,7 @@ p{
   } 
   #time-txt{
     font-family:'firstjob-font';
-    color: #163861;
+    color: #fff;
       font-size: 30px;
   }
   
@@ -622,7 +572,7 @@ p{
   
   .centered {
     position: absolute;
-    font-size: 1vw;
+    font-size: 1.2vw;
     top: 20%;
     left: 30%;
     
@@ -658,26 +608,7 @@ p{
     -webkit-background-size: 100%;
     color: transparent !important;
   }
-  /*  .modal {
-    background-color: rgba(0,0,0,0.4); /* Transparent dimmed overlay 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: table;
-  }
   
-  .modal.hidden {
-    display: none;
-  }
-  
-  .modal .container {
-  
-   text-align: center;
-   vertical-align: middle;
-   width: 200px;
-  }  */
   .modal-content{
     
    
@@ -686,17 +617,7 @@ p{
     border: 0px !important;
     
   }
-   .srt{
-    background-image: url('images/start-bg.jpg');
-    position: fixed; 
-  top: 0; 
-  left: 0; 
-	
-  /* Preserve aspet ratio */
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 99999999999;
-}
+ 
 .play{
   display: inline;
   width: 50px;
@@ -808,7 +729,12 @@ p{
 #warning-message { display: none; }
 @media only screen and (orientation:portrait){
     #wrapper { display:none; }
-    #warning-message { display:block; }
+    #warning-message { display:block;
+      position: absolute;
+      font-size: 5vw;
+      top: 40%;
+      left: 15%;
+    color: #fff; }
 }
 @media only screen and (orientation:landscape){
     #warning-message { display:none; }
