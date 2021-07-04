@@ -466,7 +466,7 @@ interact('.item')
     
       if(hint.style.display=='block'){
       
-      
+      console.log('hintt');
      
       item.classList.remove('can-drop')
       item.classList.add('cannot-drop')
@@ -476,7 +476,12 @@ interact('.item')
       item.setAttribute('data-x', 0)
       item.setAttribute('data-y',0) 
       resetbtn.style.display="none"
-    }else{
+      item2=''
+array=[]
+    }
+    else{
+      resetbtn.style.display="block"
+    }
       item.classList.remove('cannot-drop')
       item.classList.add('can-drop')
       item.classList.add('drop-target')
@@ -485,9 +490,9 @@ interact('.item')
        medicdiv = document.createElement('div')
        count++
        addConcentration();
-       resetbtn.style.display="block"
+      
        var rect = document.getElementById('components').getBoundingClientRect();
-    }
+    
       
       
   
