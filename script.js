@@ -559,7 +559,7 @@ interact('.item')
       };
          suffer.style.display = "block";
         suffer.style.paddingRight = "17px";
-        suffer.style.backgroundColor = 'rgba(0,0,0,0.5)'
+        suffer.style.groundColor = 'rgba(0,0,0,0.5)'
         suffer.className="modal fade show"; 
         suffer.onclick = () => {
           if(outerClick){ closeSuffer(); }
@@ -666,16 +666,7 @@ window.onclick = function(event) {
    }
 }
 
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 6,
-  spaceBetween: 10,
-  slidesPerGroup: 6,
-  loop: true,
-  loopFillGroupWithBlank: true,
- 
-  observer: true,  
-       observeParents: true,
-});
+
 function reset (){
   guide.style.display='inline-block'
    hint.style.display="none"

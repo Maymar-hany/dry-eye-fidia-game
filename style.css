@@ -744,9 +744,12 @@ p{
 }
 @media only screen and (orientation:landscape){
     #warning-message { display:none; }
-    #strt{
-      margin-top: 120%;
-      cursor: pointer;
-  
-    }
+   
+}
+@media (max-width : 480px) {
+  #strt{
+    margin-top: 120%;
+    cursor: pointer;
+
+  }
 }
