@@ -463,8 +463,20 @@ interact('.item')
       }else{
         item2 +="+" +event.relatedTarget.id
       }
+    
+      if(hint.style.display=='block'){
       
       
+     
+      item.classList.remove('can-drop')
+      item.classList.add('cannot-drop')
+      item.classList.remove('drop-target')
+      item.classList.remove('cant-drop','shake','dropped')
+      item.style.transform="none"
+      item.setAttribute('data-x', 0)
+      item.setAttribute('data-y',0) 
+      resetbtn.style.display="none"
+    }else{
       item.classList.remove('cannot-drop')
       item.classList.add('can-drop')
       item.classList.add('drop-target')
@@ -475,6 +487,10 @@ interact('.item')
        addConcentration();
        resetbtn.style.display="block"
        var rect = document.getElementById('components').getBoundingClientRect();
+    }
+      
+      
+  
       
   },
 })
@@ -527,7 +543,7 @@ interact('.item')
    
          
       if (attr == currentmedic){
-        console.log('right');
+       
         $('#relieved').modal('show')
       document.getElementById("score").innerHTML = ++score;
       audio.play();
