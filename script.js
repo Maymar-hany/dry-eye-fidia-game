@@ -441,23 +441,9 @@ interact('.item')
     ondrop:function(event){
       const item = event.relatedTarget
       item.classList.add('dropped')
-      /* dropzoneElement  = event.target,
-      dropRect         = interact.getElementRect(dropzoneElement)
-      console.log(dropRect);
-   
-     var   x= dropRect.left + 10
-     var   y=  dropRect.height / 8
-      console.log(dropRect);
-      item.style.webkitTransform =
-      item.style.transform =
-        'translate(' +'-'+ x + 'px, ' + y + 'px)'
-        item.setAttribute('data-x', x)
-        item.setAttribute('data-y', y) */
+
       guide.style.display='none'
-      //squares.style.display="inline-flex"
-    
       
-     
       if (item2===''){
         item2 =event.relatedTarget.id
       }else{
@@ -808,16 +794,7 @@ else{
   
 }
 }else{
-  interact('.item').draggable(
-    {
-      modifiers: [
-        interact.modifiers.restrictRect({
-          restriction: document.querySelector('#compounds'),
-          endOnly: true,
-        })
-      ]
-    }
-  )
+
   document.getElementById('notallowed-div').style.display='flex'
   var droppedelement=''
   for (let index = 0; index < array.length; index++) {
@@ -836,8 +813,9 @@ droppedelement.classList.remove('cant-drop','shake','dropped')
 droppedelement.style.transform="none"
 droppedelement.setAttribute('data-x', 0)
 droppedelement.setAttribute('data-y',0) 
-}
 console.log(array);
+}
+
 }
 var list = document.getElementsByClassName("amount-btn");
 for (var i = 0; i < list.length; i++) {
