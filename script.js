@@ -495,27 +495,7 @@ interact('.item')
     },
     ondragenter: function(event) {
       const item = event.relatedTarget
-      item.classList.remove('cannot-drop')
-      item.classList.add('can-drop')  
-      
-       if(item.className.includes('medicine-item')){
-         //currentmedic = item.querySelector("#"+show.id).querySelector('#medicImg').getAttribute('src') 
-         currentmedic = item.querySelector('#medicImg').getAttribute('src')
-         
-       }
-       var targetid= event.target.id
      
-      var attr=document.getElementById(targetid).getAttribute('data-medic')
-      console.log(event);
-     console.log(attr);
-     console.log(currentmedic);
-     // var i = document.querySelector("#"+targetid).querySelector("#check")
-      if (attr == currentmedic ){
-         // i.style.display='flex' 
-          item.classList.remove('dragging')
-
-          }
-         
           
            
     },
@@ -533,8 +513,20 @@ interact('.item')
 
       var audio = new Audio('mixkit-achievement-bell-600.wav');
       const item = event.relatedTarget
-    
-      if (!item.className.includes('dragging')){
+      item.classList.remove('cannot-drop')
+      item.classList.add('can-drop')  
+      
+       if(item.className.includes('medicine-item')){
+         //currentmedic = item.querySelector("#"+show.id).querySelector('#medicImg').getAttribute('src') 
+         currentmedic = item.querySelector('#medicImg').getAttribute('src')
+         
+       }
+       var targetid= event.target.id
+     
+      var attr=document.getElementById(targetid).getAttribute('data-medic')
+   
+         
+      if (attr == currentmedic){
         console.log('right');
         $('#relieved').modal('show')
       document.getElementById("score").innerHTML = ++score;
