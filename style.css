@@ -125,11 +125,7 @@ body {
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
-  #strt{
-    margin-top: 200%;
-    cursor: pointer;
-
-  }
+ 
   .srt {
     background-image: url(images/background-start.jpg);
     background-size: cover;
@@ -751,5 +747,12 @@ p{
     margin-top: 120%;
     cursor: pointer;
 
+  }
+}
+@media (min-width : 481px) {
+  #strt{
+    margin-top: 200%;
+    cursor: pointer;
+  
   }
 }
