@@ -742,14 +742,14 @@ p{
     #warning-message { display:none; }
    
 }
-@media (max-width : 480px) {
+@media (max-width : 767px) {
   #strt{
     margin-top: 120%;
     cursor: pointer;
 
   }
 }
-@media (min-width : 481px) {
+@media (min-width : 768px) {
   #strt{
     margin-top: 200%;
     cursor: pointer;
