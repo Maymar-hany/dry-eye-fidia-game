@@ -740,12 +740,13 @@ p{
   background-color: #004466 !important;
   background-image: none;
     }
-    #strt{
-      margin-top: 50%;
-      cursor: pointer;
-  
-    }
+   
 }
 @media only screen and (orientation:landscape){
     #warning-message { display:none; }
+    #strt{
+      margin-top: 120%;
+      cursor: pointer;
+  
+    }
 }
