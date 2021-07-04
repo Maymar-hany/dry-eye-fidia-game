@@ -11,9 +11,9 @@ var infictions = [
  { 
   'images/trium.png':'Surgery & Trauma',
   'images/hyalfid-gel.png':'Multifactorial Dry Eye' ,
-  'images/hyalfid.png':'Multifactorial Dry Eye',
+  'images/hyalfid.png':'Severe Dry Eye',
   'images/tioretin.png':'Diabetes', 
-  'images/iridium.png':'Severe Dry Eye',
+  'images/iridium.png':'Dry eye due to Iatrogenic alterations',
   'images/ribolisin.png':'Uv Light',
  }
  
@@ -73,8 +73,8 @@ var medicines=[
 
   },
   {
-    id:'hyalfid-gel',
-    class:'hyalfid-gel1',
+    id:'hyalfidgel',
+    class:'hyalfidgel1',
     img:'images/hyalfid-gel.png',
     des:'images/hyalfid-gel-des.jpg'
 
@@ -506,11 +506,14 @@ interact('.item')
        var targetid= event.target.id
      
       var attr=document.getElementById(targetid).getAttribute('data-medic')
-     
+      console.log(event);
+     console.log(attr);
+     console.log(currentmedic);
      // var i = document.querySelector("#"+targetid).querySelector("#check")
       if (attr == currentmedic ){
          // i.style.display='flex' 
           item.classList.remove('dragging')
+
           }
          
           
@@ -532,6 +535,7 @@ interact('.item')
       const item = event.relatedTarget
     
       if (!item.className.includes('dragging')){
+        console.log('right');
         $('#relieved').modal('show')
       document.getElementById("score").innerHTML = ++score;
       audio.play();
@@ -552,19 +556,7 @@ interact('.item')
       
       }else{
         $('#suffer-div').modal('show')
-    /*     
-        let closeSuffer = () => { //MODAL HIDE
-          suffer.style.display = 'none';
-          suffer.style.opacity = 0;
-      };
-         suffer.style.display = "block";
-        suffer.style.paddingRight = "17px";
-        suffer.style.groundColor = 'rgba(0,0,0,0.5)'
-        suffer.className="modal fade show"; 
-        suffer.onclick = () => {
-          if(outerClick){ closeSuffer(); }
-          outerClick = true;
-      }; */
+ 
       }
       result.onclick = () => {
         if (score===medicines.length){
@@ -715,8 +707,7 @@ function addConcentration(){
  var two = array[1]
 
  var medicTarget =
- compined[`${one}+${two}`] ||
- compined[`${two}+${one}`]
+ compined[`${one}+${two}`] || compined[`${two}+${one}`]
   
 
 if(medicTarget!==undefined ){

@@ -127,7 +127,7 @@ body {
   }
  
   .srt {
-    background-image: url(images/background-start.jpg);
+    background-image: url(images/background-start.png);
     background-size: cover;
     background-position: bottom;
     display: block;
@@ -334,7 +334,7 @@ body {
 }
 .icon-msg{
 
-  left: 57px;
+ 
   top: 5px;
 }
 #error-div , #found-div , #warn-div , #notallowed-div {
@@ -744,7 +744,7 @@ p{
 }
 
 #strt{
-  margin-bottom: 30%;
+  margin-top: 10%;
   cursor: pointer;
 
 }
