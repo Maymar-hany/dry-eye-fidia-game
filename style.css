@@ -126,7 +126,7 @@ body {
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
   #strt{
-    margin-top: 180%;
+    margin-top: 200%;
     cursor: pointer;
 
   }
@@ -739,6 +739,11 @@ p{
     body {
   background-color: #004466 !important;
   background-image: none;
+    }
+    #strt{
+      margin-top: 120%;
+      cursor: pointer;
+  
     }
 }
 @media only screen and (orientation:landscape){
