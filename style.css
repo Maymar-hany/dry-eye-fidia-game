@@ -61,7 +61,11 @@ body {
       width:168px;
   }
 
- 
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 #match{
     
     cursor: pointer;
@@ -379,8 +383,8 @@ top:0;
 }
 #score-label{
   position: absolute;
-  right: 2px;
-  margin-right: 20px;
+  right: 40px;
+ 
 }
 #guide{
   
@@ -472,7 +476,9 @@ p{
     position: relative;
 }
 
-
+#restart{
+  cursor: pointer;
+}
    
     #medicine{
         margin-top: 30px;
@@ -484,6 +490,8 @@ p{
         width: 100px;
         padding: 10px;
         height: 160px;
+        touch-action: none;
+    user-select: none;
     }
     @font-face{
       font-family:'digital-clock-font';
@@ -495,7 +503,7 @@ p{
      }
   #time{
      
-      
+      margin-right: 20px;
       margin-bottom: 10px;
       color: #fff;
       font-size: 45px;

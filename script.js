@@ -91,7 +91,7 @@ var medicines=[
     id:'iridium',
     class:'iridium1',
     img:'images/iridium.png',
-    des:'images/iridium1-des.jpg'
+    des:'images/iridium-des.jpg'
   },
   {
     id:'ribolisin',
@@ -190,19 +190,7 @@ window.dragMoveListener = dragMoveListener
 function showMedicine ( params  ){
 
     medicines.forEach(element => {
-   /*    if(element.id==='iridium-gel'){
-        med = ` 
-        <div id="${element.id}" class="is-hidden medicine-item">
-    <img width="120px" id="medicImg" src="${element.img}">
-    </div>
-    `
-      }else{
-        med = ` 
-        <div id="${element.id}" class="single-medicine is-hidden  medicine-item"> 
-    <img  id="medicImg" src="${element.img}">
-    </div>
-    `
-      } */
+ 
       med = ` 
         <div id="${element.id}" class="single-medicine d-none  medicine-item col-md-12"> 
     <img  id="medicImg" src="${element.img}" class="img-fluid">
@@ -412,18 +400,16 @@ interact('.item')
       var droppedelement=''
       for (let index = 0; index < array.length; index++) {
         var element = array[index];
-        
+        droppedelement = document.getElementById(element)
+        droppedelement.classList.remove('can-drop')
+        droppedelement.classList.add('cannot-drop')
+        droppedelement.classList.remove('drop-target')
+        droppedelement.classList.remove('cant-drop','shake','dropped')
+        droppedelement.style.transform="none"
+        droppedelement.setAttribute('data-x', 0)
+        droppedelement.setAttribute('data-y',0) 
       }
-      if(droppedelement !=''){
-      droppedelement = document.getElementById(element)
-      droppedelement.classList.remove('can-drop')
-      droppedelement.classList.add('cannot-drop')
-      droppedelement.classList.remove('drop-target')
-      droppedelement.classList.remove('cant-drop','shake','dropped')
-      droppedelement.style.transform="none"
-      droppedelement.setAttribute('data-x', 0)
-      droppedelement.setAttribute('data-y',0) 
-    }
+     
       if(count!=0){
         count-=1
       }
@@ -463,7 +449,7 @@ interact('.item')
       item.setAttribute('data-y',0) 
       resetbtn.style.display="none"
       item2=''
-array=[]
+      array=[]
     }
     else{
       resetbtn.style.display="block"
@@ -478,11 +464,7 @@ array=[]
        addConcentration();
       
        var rect = document.getElementById('components').getBoundingClientRect();
-    
-      
-      
   
-      
   },
 })
 
@@ -609,7 +591,7 @@ array=[]
 function startGame() {
   var start = document.getElementById("startgame")
   start.classList.add('d-none')
-  document.body.style.overflowY = "scroll";
+  
  intro.play()
   intro.volume="0.05"
   
@@ -727,22 +709,11 @@ if(medicTarget!==undefined ){
 //var compare = document.querySelector("#"+productResult.id).querySelector('#medicImg').getAttribute('src')
 
       if(!productResult.className.includes('d-none')){
-      /*   if(medicTarget==='images/iridium-gel.png'){
-          output.style.height = '150px';
-          output.style.width = '200px';
-          output.src=medicTarget
-        }else{
-          output.style.height = '328px';
-          output.style.width = '168px'; 
-          output.src=medicTarget
-        } */
-     
+  
           dropped1 = document.getElementById(one)
       
           dropped2 = document.getElementById(two)
-       
       
-         
           dropped1.classList.add('animate__animated','animate__rollOut','animate__slow')
           dropped2.classList.add('animate__animated','animate__rollOut','animate__slow')
           setTimeout(function(){
@@ -753,6 +724,8 @@ if(medicTarget!==undefined ){
            // dropped1.classList.remove('concentration-added')
             dropped1.classList.remove('cant-drop','shake','dropped')
           dropped1.style.transform="none"
+          dropped1.setAttribute('data-x', 0)
+          dropped1.setAttribute('data-y',0)
           dropped2.classList.remove('animate__animated','animate__rollOut','animate__slow')
           dropped2.classList.remove('can-drop')
          dropped2.classList.add('cannot-drop')
@@ -760,6 +733,8 @@ if(medicTarget!==undefined ){
          //dropped2.classList.remove('concentration-added')
          dropped2.classList.remove('cant-drop','shake','dropped')
        dropped2.style.transform="none"
+       dropped2.setAttribute('data-x', 0)
+       dropped2.setAttribute('data-y',0)
         },2000)
        
        
@@ -813,7 +788,7 @@ droppedelement.classList.remove('cant-drop','shake','dropped')
 droppedelement.style.transform="none"
 droppedelement.setAttribute('data-x', 0)
 droppedelement.setAttribute('data-y',0) 
-console.log(array);
+
 }
 
 }
