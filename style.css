@@ -271,6 +271,7 @@ body {
   display: none;
   position: absolute;
   background: transparent;
+  bottom: 50px;
   margin-right: 20px;
   right: 0;
   border: 0px;
