@@ -47,13 +47,13 @@ var compounds = [
   {
     id:'hypromelose',
     name:'Hypromelose',
-    img:'images/Hypromellose.png'
+    img:'images/Hypromellose.psd.svg'
   }
   ,
 
   {
     id:'lipoic',
-    name:'Lipoic',
+    name:'Lipoic Acid',
     img:'images/lipoic.svg'
   },
 
@@ -112,37 +112,37 @@ var patients =[
     attribute:'images/trium.png',
     id:'Post Surgery Dry eye',
     infiction:'Patients with dry eye post eye surgery',
-    img:'images/icon1.svg'
+    img:'images/post survey icon.svg'
   },
   {
     attribute:'images/hyalfid.png',
     id:'Moderate dry eye',
     infiction:'Patients with Multifactorial Dry eye e.g long screen time',
-    img:'images/icon4.svg'
+    img:'images/moderate dry eye icon.svg'
   },
   {
     attribute:'images/hyalfid-gel.png',
     id:'Severe Dry eye',
     infiction:'Patients with Multifactorial Dry eye e.g long screen time',
-    img:'images/icon2.svg'
+    img:'images/servere dry eye icon.svg'
   },
   {
     attribute:'images/iridium.png',
     id:'Dry eye due to Iatrogenic alterations',
     infiction:'',
-    img:'images/icon8.svg'
+    img:'images/Dry eye latrogenic icon.svg'
   },
   {
     attribute:'images/tioretin.png',
     id:'Diabetic Dry Eye',
     infiction:'',
-    img:'images/icon5.svg'
+    img:'images/Diabetic dry eye icon.svg'
   },
   {
     attribute:'images/ribolisin.png',
     id:'Dry eye due to photo-oxidative stress',
     infiction:'',
-    img:'images/icon3.svg'
+    img:'images/Dry-eye-photo icon.svg'
   },
 
 ]
@@ -192,7 +192,7 @@ function showMedicine ( params  ){
     medicines.forEach(element => {
  
       med = ` 
-        <div id="${element.id}" class="single-medicine d-none  medicine-item col-md-12"> 
+        <div id="${element.id}" class="single-medicine d-none  medicine-item col-md-12 col-sm-12"> 
     <img  id="medicImg" src="${element.img}" class="img-fluid">
     </div>
     `
@@ -207,7 +207,7 @@ function showProducts(){
     cunt++
  
       med = ` 
-     <div id="product-style"  class="col-md-2">
+     <div id="product-style"  class="col-md-2 col-sm-2">
       <div id="${element.class}" class="single-product  product-item " onclick = "openDescription(this.id)">
     
   <img    class=" img-fluid medicImg1" src="${element.img}">
@@ -231,10 +231,16 @@ function addCompounds (){
   
     compound=
     `
-    <div id="item-style" class="col-md-12  col-8"> 
-    <div  class="item-style" >
-   <img id="${element.id}" width="22%" height="22%" class="item" src="${element.img}" >
-   <span id="name" > ${element.name}</span>
+    <div id="item-style" > 
+    <div  class="item-style row" >
+    <div class="col-3  p-0">
+    <img id="${element.id}" width="100%" height="100%" class="item"  src="${element.img}" >
+    </div>
+    <div class="col-8 d-flex align-items-center pl-1 ">
+    <span id="name" > ${element.name}</span>
+    </div>
+ 
+  
    </div>
    </div>
         `
@@ -248,13 +254,13 @@ function addCompounds (){
 function addPatients (){
   patients.forEach(element => {
     var patient = `
-    <div id="patient-style" class="col-md-12 col-8">
+    <div id="patient-style" >
     <div id="patient-icon" class="">
     <div  id="${element.id}" class="dropzone-patient row" data-medic="${element.attribute}">
-    <div class="col-4">
+    <div class="col-4 pr-1">
     <img width="100%" height="100%"  src="${element.img}" >
     </div>
-    <div class="col-8 d-flex align-items-center pl-0">
+    <div class="col-8 d-flex align-items-center pl-0 pr-4">
     <span id="patient-text-white"> ${element.id}</span>
     </div>
      </div>   
@@ -349,9 +355,9 @@ interact('.item')
     inertia: true,
  
    onstart:function(event){
-  event.target.style.height='80px'
+  event.target.style.height='70px'
      var medicine = event.target.querySelector('#medicImg')
-   medicine.style.height='80px'
+   medicine.style.height='70px'
 }
 })
  
@@ -591,10 +597,6 @@ interact('.item')
 function startGame() {
   var start = document.getElementById("startgame")
   start.classList.add('d-none')
-  
- intro.play()
-  intro.volume="0.05"
-  
 
 }
 
@@ -799,17 +801,3 @@ for (var i = 0; i < list.length; i++) {
    )
    
 }
-function turnSoundOff(){
- var off= document.getElementById('soundoff')
-  off.classList.remove('d-none')
-  var on= document.getElementById('soundon')
-  on.classList.add('d-none')
- intro.pause()
-}
-function turnSoundOn(){
-  var off= document.getElementById('soundoff')
-   off.classList.add('d-none')
-   var on= document.getElementById('soundon')
-   on.classList.remove('d-none')
-  intro.play()
- }

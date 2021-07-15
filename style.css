@@ -21,13 +21,17 @@ body {
 
    
   }
+ #foot, #foot-img{
+    bottom: 0;
+    position: absolute;
+  }
   #comp-txt{
-    font-size: 2.3vw;
+    font-size: 1.8vw;
     color: #f49225;
     font-family:'firstjob-font';
   }
   #patient-txt{
-    font-size: 2.3vw;
+    font-size: 1.8vw;
     padding-bottom: 4px;
     color: #f49225;
     font-family:'firstjob-font';
@@ -131,24 +135,22 @@ body {
   }
  
   .srt {
-    background-image: url(images/background-start.png);
+    background-image: url(images/background-start.gif);
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     display: block;
 }
 @media (min-width: 481px) and (max-width: 1024px) {
   #name{
     font-family: 'Roboto';
     color: #fff;
-    text-align: center;
-    font-size: 1.2vw;
+   
+    font-size: 0.9vw;
   }
   #patient-text-white{
     font-family: 'Roboto';
     color: #fff;
-    display: contents;
-    text-align: center;
-    font-size: 1.2vw;
+    font-size: 0.9vw;
   }
     
 }
@@ -157,13 +159,13 @@ body {
     font-family: 'Roboto';
     color: #fff;
     text-align: center;
-    font-size: 1.2vw;
+    font-size: 0.9vw;
   }
   #patient-text-white{
     font-family: 'Roboto';
     color: #fff;
     text-align: center;
-    font-size: 1.2vw;
+    font-size: 0.9vw;
     display: contents;
   }
  
@@ -193,14 +195,14 @@ body {
   justify-content: center;
 }
 .dropzone{
-  background-image: url('images/Middle-content.svg');
+  
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover; 
   -moz-background-size: cover;
   -o-background-size: cover;
    justify-content: center;
-   height: 350px;
+   height: 300px;
 }
 
 .amount-btn{
@@ -270,7 +272,6 @@ body {
   position: absolute;
   background: transparent;
   margin-right: 20px;
-  bottom: 25px;
   right: 0;
   border: 0px;
   width: 100px;
@@ -280,18 +281,22 @@ body {
   background-image: url('images/reset.svg');
 }
 .img-height{
-  height: 70px;
- width:50px
+  height: 40px;
+}
+#score-label{
+  font-size: 3vw;
 }
 .single-product{
     position: relative;
-
-    margin-bottom: 15px;
-    padding: 5px;
-
+}
+#product-tile{
+  bottom: 0;
+  position: absolute;
 
 }
-
+#products-div{
+  display: contents;
+}
 .img__description_layer {
   position: absolute;
   top: 0;
@@ -317,7 +322,7 @@ body {
 }
 
 .img__description {
-  font-size: 1vw;
+  font-size: 0.8vw;
   transition: .2s;
   transform: translateY(1em);
   text-align: center;
@@ -352,13 +357,15 @@ body {
 }
 #header{
   display: block;
+  height: 115px;
 }
 #head{
   margin-left:25px;
 left:0;
 top:0;
-width: 170px;
-height: 120px;
+width: 15%;
+height: 110px;
+padding-top: 5px;
 
 }
 #time{
@@ -377,15 +384,12 @@ top:0;
   touch-action: none;
   user-select: none;
   padding: 0px;
+ 
   background-color: #00446693;
   border-radius: 70px;
   position: relative;
 }
-#score-label{
-  position: absolute;
-  right: 40px;
- 
-}
+
 #guide{
   
   padding-top: 30px;
@@ -399,7 +403,7 @@ top:0;
   padding: 3%;
   text-align: center;
   color: rgba(255, 255, 255, 0.945);
-  font-size: 17px;
+  font-size: 1.5vw;
 }
  
 
@@ -453,16 +457,14 @@ p{
 }
 
 #item-style{
-    padding: 6px;
-   
+    padding: 4px;
+    width: 100%;
     
 }
 #product-style{
 
     cursor: pointer;
-    padding-bottom: 17px;
-    
-    
+
 }
 
 
@@ -512,7 +514,8 @@ p{
   #time-txt{
     font-family:'firstjob-font';
     color: #fff;
-      font-size: 30px;
+      font-size: 1.8vw;
+      margin-bottom: 0px;
   }
   
 .base-timer {
@@ -752,7 +755,12 @@ p{
 }
 
 #strt{
-  margin-top: 10%;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   cursor: pointer;
 
 }
+html, body {width: 100vw; height: 100vh;}
+#wrapper {width: 100%; height: 100%}

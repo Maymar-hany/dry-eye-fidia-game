@@ -24,7 +24,7 @@
   <div  class="row no-gutters">
     <audio id="intro" src="intro.mp3" type="audio/mp3"  mute="true"></audio> 
     <div id="header" class="col-12" >
-      <img id="head" src="images/Eye-lab-logo.png">
+      <img id="head" src="images/logo.svg">
     
       <div id="time" class="row">
        <div>
@@ -43,7 +43,7 @@
     
     <div id="game" class="row no-gutters content-site">
   
-  <div class="col-md-3 col-sm-3 ">
+  <div class=" col-sm-2 ">
       <div id="patients" class="col-md-12 col-sm-12">
         <div class="col-md-12 col-sm-12">
           <h2 id="patient-txt" >INDICATIONS</h2>
@@ -51,7 +51,8 @@
       </div>
   </div>
 
-  <div id="container" class="col-md-6 col-sm-6 " >
+  <div id="container" class="col-md-8 col-sm-8 " >
+    <div class=" col-md-12 col-sm-12 dropzone">
   <div class="row no-gutters d-flex align-items-center justify-content-center">
     <div id="error-div" class="row msg-div">
       <div id="error-icon" class="col-md-2 col-sm-2 icon-msg" >
@@ -78,23 +79,18 @@
         <p  class="text-center message">No More Components Allowed</p>
       </div>
      </div> 
-    <div class=" col-md-12 col-sm-12 dropzone">
+    
   
      
       
       <div id="labzone">
 
             <div id="guide">
-              <img src="images/tap.svg">
+              <img src="images/tap.svg" class="img-fluid">
               <p class="guide-txt">Use your mouse to drag and drop 2
                 components to get your product</p>
             </div> 
-          <div id="soundon" class="col-sm-1 col-md-1" onclick="turnSoundOff()">
-            <img src="images/SOUND ON.svg">
-          </div>
-          <div id="soundoff" class="col-sm-1 col-md-1 d-none" onclick="turnSoundOn()">
-            <img src="images/SOUND OFF.svg">
-          </div>
+        
             <button id="resetbtn" onclick="reset()"></button>
             <div  class="container">
              <div class="row d-flex align-items-center ">
@@ -114,28 +110,24 @@
               </div> 
           
         </div>
-  
-      <div id="product-tile" class="col-md-12 col-sm-12">
+      </div>
+      <div id="product-tile" class="col-md-12 col-sm-12 d-flex justify-content-center ">
          <div id="products-div" >
-          
-          <h3 id="product-txt">Correct Products </h3> 
-          
-            <div  class=" col-md-12 col-sm-12">
+            <div  class=" col-md-8 col-sm-8 ">
               <div id="products" class="row">
 
               </div>
             </div>
-    
           <div >
 
           </div>
          </div>
         </div>
-      </div>
+      
   </div>
   <!-- <div id="logo"></div>
    -->
-  <div  class=" col-md-3">
+  <div  class=" col-sm-2">
 
       <div id="compounds" class=" col-md-12 col-sm-12 ">
         <div id="compoundszone" class="col-md-12 col-sm-12" >
@@ -233,32 +225,23 @@
     </div>
   
   
-<div id="foot " class="col-md-12 col-sm-12">
-  <img src="images/foot-logo.png" class="img-fluid">
+<div id="foot " class="col-md-2 col-sm-2">
+  <img src="images/foot-logo.png" id="foot-img" class="img-fluid">
 </div>
-<div class="modal fade show srt" id="startgame" tabindex="-1" class="srt" >
+<div class="modal fade show srt " id="startgame" tabindex="-1">
 
-  <div class="modal-dialog  modal-dialog-centered d-flex justify-content-center align-items-center ">
-  
-   <div class="row d-flex justify-content-center align-items-center">
-    <div class="col-md-7 col-sm-7 text-center ">
-      <img src="images/dry-eye-logo.svg" class="img-fluid">   
-     
-    </div>
-      <div class="col-md-6 col-sm-6 modal-content text-center">
+   
+      <div class="text-center">
         
-        <img id="strt" src="images/button-start.svg" onclick="startGame()" class="w-50"></img>
+        <img id="strt" src="images/button-start.svg" onclick="startGame()" width="15%" >
       </div>
-   </div>
-      
-    </div>
+      <div id="foot" class="col-md-2 col-sm-2 d-flex align-items-end">
+        <img src="images/foot-logo.png" class="img-fluid">
+      </div>
+
   </div>
 <!-- <embed src='SoundURLHere' autostart='true' hidden='true' loop='false' name="jukebox"> -->
-<div id="" >
 
-
-
-</div>
 
 </div>
  
