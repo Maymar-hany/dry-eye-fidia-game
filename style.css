@@ -448,7 +448,7 @@ p{
 }
 
 
-#patient-style{
+.patient-style{
   padding: 0px;
   background-color: #00446693;
   border-radius: 70px;

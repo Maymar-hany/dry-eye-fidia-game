@@ -2,8 +2,8 @@
 var compined={
   'amino+hyaluronic0.15%':'images/hyalfid.png',
   'amino+hyaluronic0.3%':'images/hyalfid-gel.png',
-  'hyaluronic0.15%+riboflavin':'images/ribolisin.png',
-  'hyaluronic0.15%+echinacea':'images/iridium.png',
+  'hyaluronic0.15%+riboflavin+amino':'images/ribolisin.png',
+  'hyaluronic0.15%+echinacea+amino':'images/iridium.png',
   'ginkgo+hyaluronic0.15%':'images/trium.png',
   'lipoic+hypromelose':'images/tioretin.png'
 }
@@ -20,16 +20,6 @@ var infictions = [
 ]
 var compounds = [
   {
-    id:'amino',
-    name:'Amino Acid',
-    img:'images/amino.svg'
-  },
-  {
-    id:'ginkgo',
-    name:'Ginkgo biloba',
-    img:'images/Ginkgo.svg'
-  },
-  {
     id:'hyaluronic0.15%',
     name:'Hyaluronic Acid 0.15%',
     img:'images/Hyaluronic Acid.svg'
@@ -39,6 +29,17 @@ var compounds = [
     name:'Hyaluronic Acid 0.3%',
     img:'images/Hyaluronic Acid.svg'
   },
+  {
+    id:'amino',
+    name:'Amino Acid',
+    img:'images/amino.svg'
+  },
+  {
+    id:'ginkgo',
+    name:'Ginkgo biloba',
+    img:'images/Ginkgo.svg'
+  },
+
   {
     id:'echinacea',
     name:'Echinacea',
@@ -254,18 +255,15 @@ function addCompounds (){
 function addPatients (){
   patients.forEach(element => {
     var patient = `
-    <div id="patient-style" >
-    <div id="patient-icon" class="">
-    <div  id="${element.id}" class="dropzone-patient row" data-medic="${element.attribute}">
-    <div class="col-4 pr-1">
-    <img width="100%" height="100%"  src="${element.img}" >
+    <div  id="${element.id}" class="dropzone-patient row patient-style" data-medic="${element.attribute}">
+    <div class="col-4 pl-0 pr-1">
+    <img width="80%" height="100%"  src="${element.img}" >
     </div>
     <div class="col-8 d-flex align-items-center pl-0 pr-4">
     <span id="patient-text-white"> ${element.id}</span>
     </div>
      </div>   
-    </div
-    </div>
+  
     `
 
   patientsdiv.innerHTML +=patient
@@ -523,9 +521,16 @@ interact('.item')
          
       if (attr == currentmedic){
        
-        $('#relieved').modal('show')
+        document.getElementById(targetid).style.backgroundColor="#28a745"
       document.getElementById("score").innerHTML = ++score;
       audio.play();
+     setTimeout(function(){
+      var list = document.getElementsByClassName("patient-style");
+      for (var i = 0; i < list.length; i++) {
+         list[i].style.backgroundColor="#00446693"
+         
+      } 
+  },1500)
       var currentProduct= show.id
       
      document.getElementById(currentProduct+'1').querySelector('.medicImg1').style.opacity='1'
@@ -542,8 +547,11 @@ interact('.item')
       guide.style.display='inline-block'
       
       }else{
-        $('#suffer-div').modal('show')
- 
+        item.style.transform="none"
+        item.setAttribute('data-x',0)
+        item.setAttribute('data-y',0)
+        document.getElementById(targetid).style.backgroundColor="#e61529"
+
       }
       result.onclick = () => {
         if (score===medicines.length){
@@ -684,12 +692,18 @@ function filterIt(arr, searchKey) {
 function addConcentration(){
   var firstarray = item2.split("+");
   array=firstarray.filter(onlyUnique)
-  if(array.length<3){
+  if(array.length<4){
 
  var one =array[0]
  var two = array[1]
+ var three = array[2]
 
  var medicTarget =
+ compined[`${one}+${two}+${three}`] ||compined[`${one}+${three}+${two}`]||
+  compined[`${two}+${one}+${three}`] ||
+ compined[`${two}+${three}+${one}`] ||
+ compined[`${three}+${two}+${one}`] ||
+ compined[`${three}+${one}+${two}`] ||
  compined[`${one}+${two}`] || compined[`${two}+${one}`]
   
 
@@ -715,7 +729,7 @@ if(medicTarget!==undefined ){
           dropped1 = document.getElementById(one)
       
           dropped2 = document.getElementById(two)
-      
+          dropped3 = document.getElementById(three)
           dropped1.classList.add('animate__animated','animate__rollOut','animate__slow')
           dropped2.classList.add('animate__animated','animate__rollOut','animate__slow')
           setTimeout(function(){
@@ -738,7 +752,21 @@ if(medicTarget!==undefined ){
        dropped2.setAttribute('data-x', 0)
        dropped2.setAttribute('data-y',0)
         },2000)
-       
+        if(dropped3!==null){
+          dropped3.classList.add('animate__animated','animate__rollOut','animate__slow')
+        setTimeout(function(){
+          
+          dropped3.classList.remove('can-drop')
+          dropped3.classList.add('cannot-drop')
+          dropped3.classList.remove('drop-target')
+          dropped3.classList.remove('concentration-added')
+          dropped3.classList.remove('cant-drop','shake','dropped')
+        dropped3.style.transform="none"
+        dropped3.classList.remove('animate__animated','animate__rollOut','animate__slow')
+          //dropped3.classList.add('is-hidden')
+      },2000)
+        
+      }
        
         setTimeout(function(){
           resetbtn.style.display="none"
@@ -764,8 +792,14 @@ if(medicTarget!==undefined ){
 else{
   document.getElementById('found-div').style.display='flex'
 }
-    }
+}
 })
+}else if ((one=='amino' || one == 'hyaluronic0.15%'|| one == 'riboflavin') && (two=='amino' || two == 'hyaluronic0.15%'|| two == 'riboflavin') && array.length > 1 ){
+ document.getElementById('warn-div').style.display='flex'
+}else if ( (one=='amino' || one == 'hyaluronic0.15%'|| one == 'echinacea') && (two=='amino' || two == 'hyaluronic0.15%'|| two == 'echinacea') && array.length > 1  ){
+  document.getElementById('warn-div').style.display='flex'
+  console.log("yes");
+
 }else if(medicTarget== undefined && array.length > 1 ){
   document.getElementById('error-div').style.display='flex'
   
