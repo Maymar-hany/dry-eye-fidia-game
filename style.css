@@ -9,12 +9,24 @@ body {
   -o-background-size: cover;
    min-height: 100%;
 }
-
-#product-tile{
-  bottom: 0;
-  position: absolute;
-
+@media (min-width: 1025px) {
+  #product-tile{
+    bottom: 0;
+    position: absolute;
+  
+  }
+  
 }
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  #product-tile{
+    bottom: 0;
+   
+  
+  }
+  
+}
+
 #start {
     height: 100%;
     width: 100%;
