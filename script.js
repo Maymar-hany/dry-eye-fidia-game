@@ -119,7 +119,7 @@ var patients =[
     attribute:'images/hyalfid.png',
     id:'Moderate dry eye',
     infiction:'Patients with Multifactorial Dry eye e.g long screen time',
-    img:'images/moderate dry eye icon.svg'
+    img:'images/icon2.svg'
   },
   {
     attribute:'images/hyalfid-gel.png',
@@ -137,7 +137,7 @@ var patients =[
     attribute:'images/tioretin.png',
     id:'Diabetic Dry Eye',
     infiction:'',
-    img:'images/Diabetic dry eye icon.svg'
+    img:'images/icon5.1.svg'
   },
   {
     attribute:'images/ribolisin.png',
