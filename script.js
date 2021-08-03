@@ -211,7 +211,7 @@ function showProducts(){
      <div id="product-style"  class="col-md-2 col-sm-2">
       <div id="${element.class}" class="single-product  product-item " onclick = "openDescription(this.id)">
     
-  <img    class=" img-fluid medicImg1" src="${element.img}">
+  <img     class=" w-75 medicImg1" src="${element.img}">
   <div id="des-txt" class="img__description_layer">
   <p class="img__description">Click For Description</p>
 </div> 

@@ -10,6 +10,11 @@ body {
    min-height: 100%;
 }
 
+#product-tile{
+  bottom: 0;
+  position: absolute;
+
+}
 #start {
     height: 100%;
     width: 100%;
@@ -290,11 +295,7 @@ body {
 .single-product{
     position: relative;
 }
-#product-tile{
-  bottom: 0;
-  position: absolute;
 
-}
 #products-div{
   display: contents;
 }
@@ -557,7 +558,7 @@ p{
     color:#004466
   } 
   .medicImg1{
-    height: 150px;
+    
     opacity: 0.5;
     vertical-align: bottom;
   }
