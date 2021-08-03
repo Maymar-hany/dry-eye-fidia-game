@@ -20,7 +20,7 @@ body {
 @media (min-width: 481px) and (max-width: 767px) {
   
   #product-tile{
-    bottom: 0;
+    bottom: 50px;
    
   
   }
