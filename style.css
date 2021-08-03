@@ -391,10 +391,7 @@ top:0;
   position: relative;
 }
 
-#guide{
-  
-  padding-top: 30px;
-}
+
 #soundon , #soundoff{
   bottom: 15px;
   position: absolute;
@@ -560,6 +557,7 @@ p{
     color:#004466
   } 
   .medicImg1{
+    height: 150px;
     opacity: 0.5;
     vertical-align: bottom;
   }
