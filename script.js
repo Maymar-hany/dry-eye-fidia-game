@@ -211,7 +211,7 @@ function showProducts(){
      <div id="product-style"  class="col-md-2 col-sm-2">
       <div id="${element.class}" class="single-product  product-item " onclick = "openDescription(this.id)">
     
-  <img     class=" w-75 medicImg1" src="${element.img}">
+  <img  id="product-img"   class=" w-75 medicImg1" src="${element.img}">
   <div id="des-txt" class="img__description_layer">
   <p class="img__description">Click For Description</p>
 </div> 
@@ -547,17 +547,29 @@ interact('.item')
       guide.style.display='inline-block'
       
       }else{
+        var audio = new Audio('Negative-sound.mp3');
+        audio.play()
         item.style.transform="none"
         item.setAttribute('data-x',0)
         item.setAttribute('data-y',0)
         document.getElementById(targetid).style.backgroundColor="#e61529"
 
       }
-      result.onclick = () => {
+     
         if (score===medicines.length){
-          openfinalscore();
+         
+          var list =document.getElementsByClassName("medicImg1");
+          for (var i = 0; i < list.length; i++) {
+           
+             list[i].classList.remove('w-75')
+             list[i].classList.add('w-100')
+             
+             
+          }
+          openfinalscore()
+         
          }
-      }
+      
     
     
     }

@@ -45,13 +45,13 @@ body {
   #comp-txt{
     font-size: 1.8vw;
     color: #f49225;
-    font-family:'firstjob-font';
+    font-family:'cooper-font';
   }
   #patient-txt{
     font-size: 1.8vw;
     padding-bottom: 4px;
     color: #f49225;
-    font-family:'firstjob-font';
+    font-family:'cooper-font';
   }
  
 
@@ -159,13 +159,13 @@ body {
 }
 @media (min-width: 481px) and (max-width: 1024px) {
   #name{
-    font-family: 'Roboto';
+    font-family: 'MFRooneySans-Medium-font';
     color: #fff;
    
     font-size: 0.9vw;
   }
   #patient-text-white{
-    font-family: 'Roboto';
+    font-family: 'MFRooneySans-Medium-font';
     color: #fff;
     font-size: 0.9vw;
   }
@@ -173,13 +173,13 @@ body {
 }
 @media (min-width: 1025px){
   #name{
-    font-family: 'Roboto';
+    font-family: 'MFRooneySans-Medium-font';
     color: #fff;
     text-align: center;
     font-size: 0.9vw;
   }
   #patient-text-white{
-    font-family: 'Roboto';
+    font-family: 'MFRooneySans-Medium-font';
     color: #fff;
     text-align: center;
     font-size: 0.9vw;
@@ -189,13 +189,13 @@ body {
 }
 @media (max-width: 480px){
   #name{
-    font-family: 'Roboto';
+    font-family: 'MFRooneySans-Medium-font';
     color: #fff;
     text-align: center;
     font-size: 3vw;
   }
   #patient-text-white{
-    font-family: 'Roboto';
+    font-family: 'MFRooneySans-Medium-font';
     color: #fff;
     text-align: center;
     font-size: 3vw;
@@ -223,11 +223,13 @@ body {
 }
 
 .amount-btn{
-    cursor: pointer;
+    
     font-size: 20px;
+    font-family: "cooper-font";
     padding: 7px 20px;
     background-image: url('images/Group\ 1453.svg');
-    margin: 5px;
+    background-size: cover;
+    height: 60px;
     color:#163861 ;
     border: transparent;
 }
@@ -275,7 +277,7 @@ body {
     color: #163861;
 }
 #result-txt{
-    
+        font-family: "cooper-font";
         margin-top: 10px; 
         color: #163861;
         font-weight: bold;
@@ -412,8 +414,9 @@ top:0;
 }
 .guide-txt{
   padding: 3%;
+  font-family: "cooper-font";
   text-align: center;
-  color: rgba(255, 255, 255, 0.945);
+  color: rgb(255 255 255 / 85%);
   font-size: 1.5vw;
 }
  
@@ -514,6 +517,14 @@ p{
       font-family:'firstjob-font';
       src: url('FirstJob-X8rP.ttf');
      }
+     @font-face{
+      font-family:'MFRooneySans-Medium-font';
+      src: url('MFRooneySans-Medium.ttf');
+     }
+     @font-face{
+      font-family:'cooper-font';
+      src: url('COOPBL.TTF');
+     }
   #time{
      
       margin-right: 20px;
@@ -523,9 +534,9 @@ p{
       font-family:'digital-clock-font';
   } 
   #time-txt{
-    font-family:'firstjob-font';
+    font-family:'cooper-font';
     color: #fff;
-      font-size: 1.8vw;
+      font-size: 1.6vw;
       margin-bottom: 0px;
   }
   
@@ -591,10 +602,11 @@ p{
   }
   
   .centered {
+    font-family: "cooper-font";
     position: absolute;
     font-size: 1.2vw;
     top: 20%;
-    left: 30%;
+    left: 28%;
     
   }
   #hintImg{
