@@ -564,11 +564,12 @@ interact('.item')
         if (score===medicines.length){
          
           var list =document.getElementsByClassName("medicImg1");
+          var desLayer = document.getElementsByClassName("img__description_layer")
           for (var i = 0; i < list.length; i++) {
            
              list[i].classList.remove('w-75')
              list[i].classList.add('w-100')
-             
+             desLayer[i].style.width="100%"
              
           }
           openfinalscore()
