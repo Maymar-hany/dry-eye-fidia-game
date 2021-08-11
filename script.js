@@ -351,7 +351,12 @@ interact('.item')
   .draggable({
     listeners: { move: dragMoveListener } ,
     inertia: true,
- 
+    modifiers: [
+      interact.modifiers.restrictRect({
+        restriction: document.querySelector('#game'),
+        endOnly: true,
+      })
+    ],
    onstart:function(event){
   event.target.style.height='70px'
      var medicine = event.target.querySelector('#medicImg')
