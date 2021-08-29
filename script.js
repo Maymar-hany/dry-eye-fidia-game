@@ -5,7 +5,7 @@ var compined={
   'hyaluronic0.15%+riboflavin+amino':'images/ribolisin.png',
   'hyaluronic0.15%+echinacea+amino':'images/iridium.png',
   'ginkgo+hyaluronic0.15%':'images/trium.png',
-  'lipoic+hypromelose':'images/tioretin.png'
+  'lipoic+hypromelose+amino':'images/tioretin.png'
 }
 var infictions = [
  { 
@@ -816,9 +816,12 @@ else{
  document.getElementById('warn-div').style.display='flex'
 }else if ( (one=='amino' || one == 'hyaluronic0.15%'|| one == 'echinacea') && (two=='amino' || two == 'hyaluronic0.15%'|| two == 'echinacea') && array.length > 1  ){
   document.getElementById('warn-div').style.display='flex'
-  console.log("yes");
 
-}else if(medicTarget== undefined && array.length > 1 ){
+}else if ( (one=='amino' || one == 'hypromelose'|| one == 'lipoic') && (two=='amino' || two == 'hypromelose'|| two == 'lipoic') && array.length > 1  ){
+  document.getElementById('warn-div').style.display='flex'
+
+}
+else if(medicTarget== undefined && array.length > 1 ){
   document.getElementById('error-div').style.display='flex'
   
 }
